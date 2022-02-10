@@ -1,0 +1,22 @@
+<div class="menu-item-detail-page">
+  <h3>Menu Item Detail</h3>
+  <div class="menu-item-detail-container">
+    <div>
+      <img
+        class="img-fluid menu-item-detail-img"
+        [src]="menuItem.imageUrls[0]"
+        alt=""
+        srcset=""
+      />
+    </div>
+    <div>
+      <p>{{ menuItem.name }}</p>
+      <p>Price : {{ menuItem.price }}</p>
+      <p>{{ menuItem.longDescription }}</p>
+      <div class="menu-item-action">
+        <input type="number" class="form-control" />
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

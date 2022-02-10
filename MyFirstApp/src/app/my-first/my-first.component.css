@@ -1,0 +1,24 @@
+h1 {
+  color: #2647ce;
+}
+
+.title1 {
+  padding: 10px;
+  color: red;
+  background-color: yellow;
+}
+
+.title2 {
+  padding: 10px;
+  color: black;
+  background-color: lightgreen;
+}
+
+.box1 {
+  width: 200px;
+  height: 200px;
+  background-color: lightgrey;
+  color: black;
+  padding: 20px;
+  margin: 20px;
+}

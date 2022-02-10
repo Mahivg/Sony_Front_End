@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SonyFrontEnd</title>
+    <style> 
+        h1[id="first"] {
+            color: blue;
+        }
+
+        h1[name="second"] {
+            color: green;
+        }
+    </style>
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+        var de = 10;
+        console.log('Hello World...! ' + de);       
+
+            function onMouseover() {
+                console.log('Mouse hovered on div with Id' );
+                console.log(event);
+            }
+
+            function sample1 () {
+                console.log('Btn Clicked,,,');
+            }
+    </script>
+    <!-- <script src="scripts.js"></script> -->
+    <!-- <script src="dom-manipulation.js"></script> -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet"> -->
+  </head>
+  <body>
+      <section id="tectStyles">
+          <p style="color: red;"> Text styles</p>
+          <div id="appHeader">
+            Imgage Logo
+            Navigaation Links
+    
+            All the elements i need for header
+          </div>
+          <header>
+            Imgage Logo
+            Navigaation Links
+    
+            All the elements i need for header
+          </header>
+          <div> 
+            <!-- Subgroup -->
+            <h1 id="first">Headings</h1>
+            <h1 name="second">Hello</h1>
+            <h2>Hello</h2>
+            <h3 class="common-style">Hello</h3>
+            <h4>Hello</h4>
+            <h5>Hello</h5>
+            <h6>Hello</h6>
+          </div>
+        
+          <div>
+            <h1>Paragraph</h1>
+            <p>This is a paragraph text...</p>
+          </div>
+    
+    
+        <!-- This is a test line -->
+    
+        <div id="uniq-div-1" onmouseover="onMouseover()" >
+            <h1 class="common-style">Lists</h1>
+    
+            <h3>Unordred List</h3>
+        
+            <ul>
+              <li>Sachin</li>
+              <li>Dhoni</li>
+            </ul>
+        
+            <h3>Ordred List</h3>
+        
+            <ol>
+              <li>Number 1</li>
+              <li>Number 2</li>
+            </ol>
+        </div>
+      </section>
+      
+    
+
+    <h3> Table </h3>
+
+    <table border="1">		
+        <!-- Table Head --->
+        <thead>
+            <tr>
+                <th>
+                     Header 1
+                </th>
+                
+                <th>
+                    Header 2
+                </th>
+            </tr>
+        </thead>        
+        <!-- Table Body -->        
+        <tbody>
+            <tr>
+                <td>
+                        column1
+                </td>
+                
+                <td>
+                     Column 2
+                </td>
+            </tr>
+        </tbody>
+    <table>
+    
+    <h3 id="image" class="img-class"> Image  </h3>
+
+    <h4> From Project Directory </h4>
+    <img src="mchalla@nextsphere.com.jpg" />
+
+    <h4>From Internet </h4> 
+
+    <img src="https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJhbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="" srcset="">
+    <h4> Using Base 64 </h4>
+
+    <h3> HTML 5</h3>
+    <p> I am Big text. <small> But i am small </small></p>
+
+    <p> IPL <abbr> Indian Premiere League </abbr> </p>
+
+    <blockquote>
+        Quotes
+    </blockquote>
+
+    <h3> Forms </h3>
+
+    <form >
+        <h4> Input </h4>
+        <input /> <!-- Text -->
+
+    <label for="txtName"> Name : </label>
+    <input id="txtName" type="text" />
+
+    <!-- <p> Name : </p> -->
+    <input type="number" />
+
+    <input type="date" />
+
+    <input type="email" />
+
+    <input type="password" />
+
+    <input type="button" id="btn1"  value="Using Input"/>
+
+    <input type="submit"  value="Using Input Submit"/>
+
+    <input type="checkbox" /> Option 1
+    <input type="checkbox" /> Option 2
+
+
+    <label> Select Gender </label>
+    <input type="radio" name="gender" />  Male
+    <input type="radio" name="gender" />  Female
+    <input type="radio" name="gender" />  Trans
+
+    <!-- <input type="select" >
+    <option> Data 1</option>
+    <option> Data 2 </option>
+</input> -->
+
+    <select>
+        <option> Data 1</option>
+        <option> Data 2 </option>
+    </select>
+
+
+ 
+
+    <button>  Text Default Btn  </button> <!-- By defualt type is submit -->
+
+    <button type="button" onclick="sample1()"> TYpe Button</button>
+
+    <!-- <button type="submit"> TYpe submit</button> -->
+
+    </form>
+
+    <div id="divLorem" class="show">
+        <p>
+           <span style="color: red;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </span>
+             when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+    </div>
+
+    <span>
+        <p style="font-size: 18px; font-weight: bold; text-decoration: underline; color: #245933;" >About me</p>
+        <p>
+           <span style="color: red;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </span>
+             when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+    </span>
+    <div>
+        <p> direct child</p>
+        <section>
+            <p> nested child</p>
+        </section>
+    </div>
+
+    <div>
+        <p> I am one </p>
+        <p> I am two </p>
+        <p> I am three </p> <!-- nth-child(3) -->
+    </div>
+
+    <div>
+        <a href="./test.html"> CLick to go to Test Page</a>
+    </div>
+
+
+    <div id="pad-mar" >
+
+        <p> Hello </p>
+
+        <p> World !!</p>
+
+    </div>
+
+    <div id="fixed-div">
+        My Position is fixed
+    </div>
+
+    <div id="relative-div">
+        My Position is Relative
+    </div>
+
+
+    <div class="absolute-parent">
+        <div id="absolute-div">
+            My Position is absolute
+        </div>
+
+        <!-- <p> Find Me !!</p> -->
+    </div>
+
+
+    <!-- Display Flex -->
+
+    <div class="my-flex-box">
+        <div> Child 1 </div>
+        <!-- <div> Child 2 </div>
+        <div> Child 3 </div>
+        <div> Child 4 </div> -->
+        <!-- <div> Child 5 </div> -->
+        <!-- <div> Child 6 </div> -->
+        <!-- <div> Child 7 </div> -->
+        <!-- <div> Child 8 </div> -->
+        <!-- <div> Child 9 </div> -->
+
+        <!-- <div> Move me !!</div> -->
+    </div>
+
+
+    
+
+    <script src="dom-manipulation.js"></script>
+</body>
+</html>

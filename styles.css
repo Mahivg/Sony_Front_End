@@ -1,0 +1,159 @@
+/* h3#image {
+  color: cyan;
+} */
+
+.img-class {
+  color: darkblue;
+}
+
+h3 {
+  color: red;
+}
+
+h1[id="first"] {
+  color: green;
+}
+
+h1[name="second"] {
+  color: blue;
+}
+
+/* div > p {
+  color: darkgoldenrod;
+}
+
+div + p {
+}
+
+div ~ p {
+} */
+
+.common-style {
+  font-size: 14px;
+  text-align: center;
+}
+
+div > p:first-child {
+  color: darkgreen;
+  /* font-family: "Comforter", cursive; */
+}
+
+div > p:last-child {
+  color: pink;
+}
+
+div > p::first-letter {
+  color: purple;
+}
+
+div#pad-mar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div#pad-mar > p {
+  font-size: 32px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: darkblue;
+}
+
+div#pad-mar > p:nth-child(1) {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+}
+
+div#pad-mar > p:nth-child(2) {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 25px;
+  margin-bottom: 15px;
+}
+
+div#fixed-div {
+  width: 400px;
+  height: 100px;
+  background-color: #fff;
+  color: darkgreen;
+  font-size: 24px;
+  border: 1px solid #000;
+  text-align: center;
+  padding-top: 60px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+}
+
+div#relative-div {
+  width: 400px;
+  height: 100px;
+  background-color: #fff;
+  color: darkmagenta;
+  font-size: 24px;
+  border: 1px solid #000;
+  text-align: center;
+  padding-top: 60px;
+  position: relative;
+  top: 0px;
+  left: 50px;
+}
+
+.absolute-parent {
+  height: 200px;
+  width: 300px;
+  margin: 0 10%;
+  /* text-align: center; */
+  border: 1px solid violet;
+  margin-top: 20px;
+  position: relative;
+}
+
+div#absolute-div {
+  width: 200px;
+  height: 100px;
+  background-color: #fff;
+  color: darkslateblue;
+  font-size: 24px;
+  border: 1px solid #000;
+  text-align: center;
+  padding-top: 60px;
+  position: absolute;
+  top: 0px;
+  left: 50px;
+}
+
+.my-flex-box {
+  /* width: 900px;
+  height: 900px; */
+  /* margin: 0 auto; */
+  background-color: slategrey;
+  display: flex;
+  height: 100%;
+  /* flex-direction: column; */
+  /* flex-flow: column-reverse; */
+  /* main-axis */
+  justify-content: center;
+  /* cross-axis */
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+
+.my-flex-box > div {
+  height: 200px;
+  /* width: 200px; */
+  flex-basis: 33%;
+  text-align: center;
+  background-color: rgb(243 215 80);
+  color: rgb(38 38 40);
+  /* margin: 10px; */
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

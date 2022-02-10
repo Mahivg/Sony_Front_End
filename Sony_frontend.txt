@@ -1,0 +1,1972 @@
+
+
+Front End
+
+	HTML
+	CSS
+	Javascript 
+	
+	
+Browser Engines
+
+	Chrome - V8 engine -> Presentation engines, javascript engines
+	
+	Safari 
+	
+	IE - EdgeHTML
+	
+	Mozilla = Gecko
+	
+Nodejs
+
+	-> wrapped with C and  C++ Programming language -> browsers javascript engine
+	
+	-> its consists a node package manager -> NPM
+	
+	-> npm install bootstrap, jquery, rimraf
+	
+	-> node_modules
+	
+		- bootstrap
+		
+	->
+	
+	-> folder1 ->
+			npm install bootstrap, 
+			npm install jquery, 
+			npm install rimraf
+			
+	-> folder2 ->	
+			
+		package.json -> Definition of ur dependencies
+		
+			you can store your installtion references
+			
+			{
+				name: 
+				
+				version:
+			}
+			}
+		npm install
+	
+
+Category
+
+	1. Presentation
+		
+		HTML -> core design
+		CSS -> styles for ur design
+		
+	2. Interaction
+		
+		Javascript -> Plain Javascript or Vanilla Javascript
+		
+		Javascript based frameworks
+		
+			-> JQuery ->
+			
+			-> ReactJs
+			
+		Typescript -> Angular
+		
+		
+HTML
+	
+	-> Hypertext Markup Language
+	
+	-> Syntax based language
+	
+	
+Tag Syntax
+
+	-> start tag and end tage
+	
+	-> <tag> Text </tag>
+	
+	-> In start tags, user can add attribute to HTML tag
+			<tag id="txt1" name class styles> 
+			
+			</tag>
+			
+Structure of an HTML file
+
+	-> a file with extension .html
+	
+	-> <!doctyle html> -> HTML file belong to version 5. HTML 5
+	
+	<html>
+		<head>
+			Information or metadata about ur HTML
+			<title> My custom Tab name </title>
+			
+			Place to define ur CSS and JS files
+			
+		</head>		
+		<body>
+		
+			<h1> Hello </h1>
+			
+			<!-- 
+				Comments
+			-->
+		</body>	
+	</html>
+	
+	
+HTML Tags
+
+	1. Headings
+	
+		<h1>.... <h6>
+
+	2. Paragraph
+	
+		<p> </p>
+	
+	3. List
+	
+		-> Unordered List
+		
+			<ul>
+				<!-- List Item -->
+				<li> Option 1</li>
+			</ul>
+			
+		-> Ordered List
+		
+			<ol>
+				<!-- List Item -->
+				<li> Option 1</li>
+			</ol>
+		
+	4. Table
+	
+		<table>
+		
+			<!-- Table Head --->
+			<thead>
+				<tr>
+					<th>
+					</th>
+					
+					<th>
+					</th>
+				</tr>
+			</thead>
+			
+			<!-- Table Body -->
+			
+			<tbody>
+				<tr>
+					<td>
+					</td>
+					
+					<td>
+					</td>
+				</tr>
+			</tbody>		
+		
+		<table>
+		
+	5. Image
+	
+		<img src="" />
+		
+			src ->
+			
+				Project directory path
+				
+				any web image path
+				
+				or base64 image
+					
+
+    <img src="data:image/jpeg;base64,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" alt="" srcset="">
+	
+	6. Forms
+	
+		-> <label>
+		
+		-> Input
+		
+			<input />
+			
+	
+	Grouping Tag
+	
+		-> Div
+		
+		-> Span -> Inline Elements
+		
+		-> Section
+
+
+	Block Elements Vs Inline Elements
+	
+	Block Elements
+	
+		-> Entire width of your browsers
+		
+		-> It always starts in new line
+		
+		-> Block elements height and width can be controlled using CSS or stylings
+		
+		
+	Inline Elements
+	
+		-> only takes content width
+		-> Height and width cannot be controlled by Stylings
+		-> Starting will be based on previous elements
+		
+		-> Inline  + Inline
+		
+		-> inline + Block
+		
+				inline
+				block
+				
+		-> Block + inline
+			
+				block
+				inline
+				
+		-> Inline -> block
+		
+		<label>
+			<h1></h1>
+		</label>
+		
+	Inline-Block
+	
+		display: inline-block		
+		
+		-> content width
+		-> Height and width can be controlled using stylings
+		
+
+	-> <span>
+	
+	
+CSS
+
+	-> Cascading Styling Sheets
+	
+	-> Not a programming language
+	
+	-> Design our web page with our own styling
+	
+	
+Ways to bring stylings to HTML
+
+	-> Inline Style 
+	
+			-> styles will be applied directly on top of elements/Tags
+			
+			-> Using style attribute of HTML tag
+			
+				Ex: <p style="" > Hello </p>
+			
+			
+			
+			Key : Value - Pair
+			
+			key1: val1; key2: val2;
+			
+			
+			Ex: <p style="color: red;" > Hello </p>
+			
+	-> Internal CSS
+	
+		html
+			head
+			body
+		/html
+			
+		<head>
+			<style>
+				// We can able to add styles we need
+				
+				
+			</style>
+		</head>
+		
+		<body>
+			
+		</body>
+		
+		
+	-> External CSS
+		
+		<head>
+			
+		</head>
+		
+		-> create a file with extension of .css
+		
+		-> and here you will add all the css or styling u need for the page
+		
+		-> and you wil refer the file in the head section
+		
+		<head>
+			<link href="path of the file"> </link>
+			
+			<link href="/styles.css"> </link>
+			
+			<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" > </link>
+			
+			path of the file 
+			
+				-> within a project directory
+				-> over the internet
+		</head>
+		
+
+	Priority ->
+	
+	
+		Inline style -> dominates
+		
+		Internal
+		
+		External
+		
+
+
+	CSS Selector :
+	
+		-> ways to select an element and apply style to its
+		
+			-> we can write styling on top of tag itself -> style attribute
+			
+		
+		
+		Basic structure of styling
+			
+			Selector {
+				key : value;
+				key1: value1;
+			}
+	
+		
+		How we can select an element
+		
+			1. Element Selector
+			
+				p, h1, h3,
+				
+				h3 {
+					color: red;
+				}
+				
+			2. Attribute Selector
+			
+				<p id="one"> one </p>
+				<p name="two"> one </p>
+				<p attribute="vale"> one </p>
+				
+				
+				p['id'="one"] {
+				
+				}
+				
+				#one {
+					color: red;
+				}
+				
+				p#one {
+					color: red;
+				}
+				
+				p['name'="two"] {
+				
+				}
+				
+				p['attribute'="value"] {
+			
+				
+				
+				
+			3. Class selector
+			
+				.common-style {
+					font-size: 14px;
+					text-align: center;				
+				} => class -> common-style
+				
+			
+				<p class="common-style common-style2 common-style3" >
+				
+				<h1>
+				
+		Domination level -> Specificity
+		
+		
+			Inline styles
+			
+			Attribute Selctor -> p#one -> 1
+			
+			class selector -> 0.5
+			
+			ELement selector -> p {} -> 0
+			
+			
+		Cascading ->
+		
+		
+			<div>	
+				<p></p>
+				
+				<section>
+					<p> </p>
+				</section>
+			
+			</div>
+	
+	
+			<div>	
+				<p></p> -> Unique id or attribute and the write styles for it
+			
+			</div>
+			
+			
+			<div>	
+				<p></p>
+			
+			</div>
+			
+			
+			pseudo selectors
+			
+				div > p {
+					color: red;  
+				}
+				
+				div {
+				}
+					
+				
+				div + p {
+					<div></div>
+					<p> </p>
+				}
+				
+				
+				div::first-child {
+					color: redl
+				}
+				
+				div::nth-child(4) {
+				}
+				
+				div:nth-child(even) {}
+				
+				p::first-letter {
+					styles
+				}
+				
+				p:hover {
+					
+				}
+				
+				
+	Colours :
+	
+		color : {value}
+		
+		value =>  named => red, black, blue, ( named colours available in engine)
+		
+					Red, Green and Blue => Primary colours => combination of these colours can make any color
+					
+						1 mug red paint, 1 mug of green paint and 1 mug og blue paint
+						0 1 0.5 0.25 => make new colour
+		
+		
+				=> hexacodes => #0d0, #000000 -> 0 is the lowest , highest F
+				
+					0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+					
+					00, 01, 10, ...... ff
+					
+					#000 => dark => black
+					#fff =>
+					
+					color: #000; #00000;
+		
+		
+				=> RGB 
+				
+					color:  rgb(0, 0, 0); => 0 to 255
+					
+	
+	Fonts
+	
+		font-size: 0px => infinity px
+		
+		font-weight => Thikness of your text => 100....900, bold => normal
+		
+		line-height => 1...10
+		
+		font-family => font looks
+		
+		text-align => right, left, center
+		
+		text-decoration => bold, italic, underline
+		
+		
+		
+		
+		text-align: center;
+		text-decoration: underline;
+		font-style: italic;
+		
+		
+		visibility : hidden | visible; 
+		
+		display: none;
+		
+		
+		list-style:
+		
+		ul
+			li 
+			
+		ol
+			li
+			
+			
+		ul#myId > li {
+			list-style: circle;
+		}
+		
+		
+		
+	
+	Element Box Model:
+	
+		Content
+		
+		
+		Border
+		
+			An imaginery line around content
+			
+			border-width : 1px;
+			border-style: solid;
+			border-color: darkblue;
+			
+			border: 1px solid dark-blue;
+		
+		Padding
+		
+			distance between content and Border
+			
+			padding-top: 10px;
+			padding-right: 20px;
+			padding-bottom: 25px;
+			padding-left: 15px;
+			
+			if top and bottom shares same size and right and left shares same size
+			
+				padding: 10px 20px;
+			
+			else if all side with equal padding
+				padding: 10px;
+				
+			else 
+			
+				padding: 10px 10px 20px 20px;
+			
+			
+			
+		Margin
+		
+			distance between two element borders
+							
+			margin-top: 10px; calc(100% -10%);
+			margin-right:
+			margin-bottom:
+			margin-left:
+			
+			
+	Positioning an element:
+	
+		position : ${value}
+		
+		fixed:
+		
+			position: fixed;
+			
+				-> Fetch out ur element from document screen
+				-> it will attach your element to window || tab || view-port
+	
+			decide the position
+			
+				top, right, bottom , left;
+				
+				top: 0px;
+				right: 0px;
+				
+		relative:
+		
+			position: relative;
+			
+				-> Fetch out your element from document screen
+				
+				-> within the same place
+				
+				-> relative elements are normal elements but can be controlled through position properties
+				
+				-> relative elements move relative to the elements starting point (at the time of rendering)
+				
+				
+		absolute:
+		
+			position: absolute;
+			
+				-> Not to view port
+				
+				-> it will move relative to nearest relative parent element
+				
+				-> absolute positioning always need to be used within an relative parent.
+				
+				-> if not by default it will be attached to body tag as body tag is relative by default
+				
+		default:
+		
+			position: static;
+			
+		position: sticky;
+				
+				
+	
+	
+	Display:
+	
+	
+		display: block | inline | inline-block;
+		
+		designing:
+		
+		display: flex | grid | table;
+		
+		
+		Table :
+		
+			Parent => display: table; no-rows no-of-colums; 2 X 2
+			
+				child => 1r 2c
+				child
+				
+		flex:
+		
+		Parent:
+		
+			display: flex; 
+		
+		default it will get:
+			
+			flex-direction: row;
+			flex-flow: row;
+			
+			-> your child elements going to be arranged in a row
+			
+			-> flex-wrap: wrap | no-wrap; you can retain the child original height ant width
+			
+
+	Javascript:
+
+		Programming Language in our core (HTML and CSS are not programming language) (only syntax language)
+		
+		Brower Engine Language => Javascript Engine
+		
+		1. Creating Javascript File
+		
+			a file with extension .js => javascript file
+			
+		2. what are all the ways we could include our code in our HTML
+			
+				-> Internal Script
+						
+						<head> </head>
+						
+						<body> </body>
+						
+						
+						<script>
+							// all jS codes
+						</script>
+				-> create a file with js extension					
+					
+						<head> </head>
+						
+						<body> </body>		
+						
+						<script src="path for the file" > </script>
+		
+		
+							http / https wil be the file over internet
+							
+							or within project
+							
+							
+			
+		Data :
+		
+			Data types that JS support
+			
+			Primitive
+			
+				string => "". '', 
+				`
+				sfds
+				dssdf
+				sdfsd`
+				
+				number => 2, 2.3, 23.09903
+				
+				boolean => true or false
+				
+			Referenece
+			
+				Object 
+				
+				Arrays 
+				 x = 10;
+				Function =>  add() {
+					var x = 11;
+								var s =3;
+								
+								retrun x;
+					
+								}
+								
+				a = a + 3;
+				
+				
+		Declaration of Variable
+		
+			
+			string s = "s";
+			
+			Declaration Keywords are:
+			
+				var, let and const
+				
+				var s = "s"; 
+				
+				let s = 's'; // Block scope
+				
+				
+				const I = 2; => once u declared and defined value, it cannot be chaneg
+				
+				only declared meand can be changed once
+				
+				const PI;
+				
+				PI = 24;
+				
+		ECMA Script version 6 => ES6
+		
+	
+		Javascript scope type is => lexical Scope 
+		
+		
+		console.log("Hello World!!");
+		
+		
+		Objects in Browser Engine
+		
+			Window -> Global object 
+			
+			Document -> for actions within body			
+			
+			LocalStorage -> Persistant storage
+			
+			SessionStorage -> Temporary Storage
+			
+			
+	
+	Draw back of JS
+	
+		-> Less type restriction => no type restriction
+		
+	
+	
+	Javascript for DOM Manipulation:
+	
+		document => 
+		
+		document.getElementById
+		
+		document.querySelector
+		
+		document.querySelectorAll
+		
+		
+		var elem = document.getElementById('id'); // pass id value as arg
+			
+		var elem1 = document.querySelector('#h1'); // pass selector as arg
+		
+		
+		document -> elem -> inherit all dom characteristics from document object
+		
+		elem.getElementById()
+		var myDiv = document.querySelector('#uniq-div-1');
+		
+		myDiv.querySelector('h1');
+		
+		
+	
+	Array methods:
+	
+		length -> number of elements
+		
+		push -> add items in the end
+		
+		pop -> remove items in the end
+		
+		shift -> remove items in the start
+		
+		unshift -> add items in the start
+		
+		indexOf -> find index position of given value
+		
+		splice -> 2 args -> 1 - start pos, 2 - number of elements
+		
+		numArra = [1,2,3,4,5,6,7,8]
+		
+		[1,2,3,4]
+		
+		slice -> numArra.slice (0, 3)
+
+	
+	Object methods 
+	
+	
+		obj = { name: 'Sony', place: 'Hyd' }; obj.name, obj.place
+		
+		Objects
+		
+			Objects.keys(obj) => [keys] => ['name', 'place']
+			
+			Objects.values(obj) => ['sony', 'hyd']			
+			
+			Objects.keys(obj).forEach(key => console.log(obj[key]));
+			
+			obj.hasOwnProperty('name') => boolean = > true
+			
+			
+	Strings
+	
+		length => number of characters
+		
+		indexOf => charSeq as arg -> it will return first identified pos
+		
+				var str = "Hello World";
+				
+				str.indexOf('o') => 4
+				
+				str.indexOf('ll') => 2
+				
+		substring => str.substring(0) => "Hello World" => new reference string
+					 str.substring(0,3) =>  "Hell" 
+					 
+		toLowerCase
+		
+		toUpperCase
+		
+		== -> it will compare only values -> '1' == 1 -> true
+		
+		===  -> it will compare type as well -> '1' === 1 -> false
+		
+		
+		charAt -> index as arg -> returns characeter in that pos
+		
+		str.charAt(2) -> 'l'
+		
+		str.replace('l', 'e') -> "      Heeeo wored    ';
+		
+		str.trim() -> 'Heeeo wored'
+		
+		trimStart();
+		
+		trimEnd()
+		
+	
+	JSON
+	
+		stringify => convert ur json object to string format
+		
+					JSON.strinify(obj) -> "{\"name\" : \"sony\"}"
+					
+	
+	
+	var Person = function(name, age, des) {
+		return { name: name, age: age, designation: des }
+	}
+		
+		
+	var per1 => Person('magesh', 27, 'SSE')
+	
+	
+	
+	Spread and rest Operators:
+	
+		
+		rest => 
+		
+			var obj = {name: 'sony', place: 'hyd', company: 'NS'};
+			
+			
+			
+				
+			const place = obj.place;
+			const company = object.company;
+			
+			const  { place, company } = obj; 
+			
+		Spread
+		
+			function a(arg1, arg2, arg3) {
+			
+			}
+			
+			a(1,2,4,5) => 
+			
+			function a(...args) {} -> args will be an array now => args[0] => 1, args[1] -> 2
+			
+			a(1)
+			
+			a(1,2)
+			
+			a(1,2,3)
+			
+			var arr1 = [1,2,3];
+			
+			var arr2 = arr1;
+			
+			var arr3 = [...arr2]; -> with new reference
+			
+			var obj1 = { name : 'sony' }
+			
+			var obj2 => { name: 'sony', place: 'hyd' }
+			
+				obj2 -> { ...obj1, place: 'hyd' }
+			
+			
+		
+		Objects array =>
+		
+			let objArr = [{ name: 'sony', place: 'hyd'}, { name: 'mahi', place: 'chn' }, { name: 'sony', place: 'hyd'}]
+			
+			objArr.findIndex(function(obj) =>  obj.name == 'sony'); -> 0
+			
+			objArr.find(function(obj) =>  obj.name == 'sony'); -> { name: 'sony', place: 'hyd'};	
+			
+			
+			
+			
+			objArr.forEach( (item, index, arr) => { })
+			
+			objArr.map => objArr.map(function(item) => { return item } ) => [{ name: 'sony', place: 'hyd'}, { name: 'mahi', place: 'chn' } ] => new reference
+			
+					=>	it will return diffrent array based on ur return value
+					
+					=> objArr.map(function(item) => { return item.name } ) => ['sony', 'mahi']
+
+					=> objArr.map(function(item) => { item['comp'] = 'NS'; return item; } ) => [{ name: 'sony', place: 'hyd', 'comp' : NS }, { name: 'mahi', place: 'chn', 'comp' : NS } ]	
+			
+			
+			object.filter(function(item) =>  u can do any operation on item; have to returm true/ false }
+			
+			
+			numArr = [1,2,3,4,5,6,7,8]
+			
+			numArr.includes(3) -> true
+			
+			
+			'str'.includes('r') -> true
+			
+			
+			numArr.filter((num) => {
+				return num % 2 === 0;// predicate
+			});
+			
+			[2,4,6,8]
+			
+			
+			NodeJs -> they are pure vanilla js projects
+			
+			JS based libraries
+			
+				jQuery
+				
+					they have written a layer on top of ur javascript
+ 					-0
+					jQuery convert to JS before they load into browser
+					
+					build tools
+						
+						gulp, build -> job configuration converssion tools
+							jqeury to Js
+					
+							
+					Javascript
+						$('#someId').value('someValue');
+						document.getElementById('someId').value = 'value';
+						
+						$.onLoad(funciton(){})
+						
+						$('someId').click(function(){});
+					
+				Typescript -> layer formed on top of JS
+				
+					tool used to convert typescript to JS
+					
+					min.js -> minified version of ur original js
+				jQuery -> js -> minfied verion of ur js -> removing spaces and comments, chnageing ur variable name into a,b,c
+
+			
+			
+	Typescript :
+
+		by Microsoft		
+		
+		super set of javascript
+		
+		Typed Javascript 
+		
+		Typed superset of javascript
+		
+		Object oriented programming in javascript
+		
+
+
+		Setup
+		
+			npm install -g typescript
+			
+			check version
+				tsc -v
+		
+		
+		Types:
+			number : 1, 1.1, 1.456654, -10
+			
+			string: "", '', ``
+			
+			boolean: true, false
+			
+			
+			object : {}
+			
+			array : []
+			
+			
+	
+	
+	HTML, CSS -> SCSS, SASS, style
+	
+		<ul>
+			<li>
+	
+	
+		ul {
+			color: red;
+		}
+		
+		ul li {
+			font-size: 14px;
+		}
+		
+		SCSS -> complile -> css
+			
+			ul#nav {
+				color: red;
+				li {
+					font-size: 14px;
+				}
+		SASS -> compile		
+			ul#nav
+				font: 12px
+				li
+	
+	
+	Javascript
+	
+		-> Library
+			-> number of functions or utlities already written and published
+			-> LoadDash, Bootstrap, underscore
+			
+		
+		-> Framework
+		
+			JS Framework
+			
+			jquery -> $('#id').value() => javascript
+				pre-defined process or steps we need to follow
+				
+			Shopping app
+			
+				dashboard -> select a cateogry, search a product
+				
+								-> product list
+						
+									-> product-details
+									
+									
+		An UI application will be classified into two types
+		
+			1) Multi-Page application
+			
+			  A page means -> An html which has <html> tag </html>
+			  
+				dashboard.html
+					<html>
+						<head>
+						</head>
+						<body>
+						</body>
+					</html>
+					prod-list.html					
+						<html>
+						
+							<head>
+							</head>
+							<body>
+							</body>
+						</html>
+						prod-detail.html										
+							<html>							
+								<head>
+								</head>
+								<body>
+								</body>
+							</html>
+						
+			
+			2) Single page application
+			
+				Only one page will have ur HTML defintion					
+					Layout 
+				
+						<html>						
+							<head>
+							</head>
+							<body>
+								<!-- Place holder -->
+								
+							</body>
+						</html>
+				all others are simply partials or child contents
+		
+		
+		Angular
+		
+			Developed by Google -> support for the development is higher, FOrums are availbe 
+			
+			Support SPA
+			
+			Angular 1.X -> 1.1 ---> 1.9
+			
+				AngualrJS -> this framework is based on Javascript -> less type
+						-->MVC Concept -> Model, View and Controller
+				
+			Angular 2.0
+			
+				Angular + Typescript
+				
+			Typescript -> robust language to development
+			
+			
+			Simpled MVC Concept -> Model, View and Controller
+			
+					-> we have more control over view
+					
+					-> component -> Component based developmet , widget
+			
+			
+			-> readily running code 
+			
+			-> TEsting Libraray Karma
+			
+			-> Build tool 
+			
+					- webpack -> convert our files to a bundle
+					
+					-> AOT -> complier 
+					
+					Just In Time - complier 
+			
+		
+		
+			System Requirements
+			
+				-> NodeJs
+				-> TS
+				
+				-> Angular -> Angular-CLI
+						
+						npm install -g @angular/cli@11					
+						
+						check
+						
+							ng -v || --version
+				
+					
+			
+			Angular 2 -> 13
+			
+				
+			
+			
+			compitetors for Angular
+				
+					ReactJS -> JSX
+					
+					VueJs -> TS 
+					
+		
+		Creating Angular Project
+		
+			two ways create
+			
+				1. Angular CLI -> 
+				
+					ng --version
+					
+					ng new ApplicationName
+					
+					ng new ApplicationName --prefix=titan --cssStyle=css --routing=yes
+						
+						titan-root
+					
+					EX: ng new MyFirstProject
+					
+						css -> css, scss, sass or style
+						route -> do you need route file -> no
+						
+					
+				
+				2. Git hub URL -> from any website u can download
+				
+				
+				
+			Build
+				
+				ng build
+					
+			Run
+			
+				ng serve
+				
+					by default ur application will run on port number 4200
+					
+				ng serve
+					it will run another application in random port 
+					
+				ng serve --port=4300
+					
+					now app will run on given port 4300 => http://localhost:4300
+					
+					
+				
+		
+		Files in Angular
+		
+			index.html -> root html / index html/ layout
+			
+			main.ts -> is the bootstrap file
+			
+				-> AppModule
+					
+						Root Module of our application
+						
+					
+			
+			
+		Module
+		
+			 Group of functionalities
+			 
+			 Root module
+				Multiple components
+				
+			 
+			 Shopping
+			 
+				ProductModule
+					Components-> A part of UI / WIdget
+						todays-deal
+							write code that need to display todays-deal and the disply in UI
+					product-list
+					product-detail
+					
+				PaymentModule
+				
+					Checkout					
+					payment
+					
+					
+		
+		Understanding Components-
+		
+				Bootrstap module -> AppModule
+				
+					to bootrstrap a component => Root Component / Boot component
+				
+				Bootstrap Component -> 
+					
+				
+					
+			
+		
+		Need to have a bootstrap module - AppModule
+			
+				-> should have a bootstrap component - ( AppComponent)
+				
+					-> only boostrapped component's selectors are allowed in index.html -> <app-root> </app-root> ( AppComponent)
+		
+		
+		Component
+		
+			MVC structure
+			
+				Model - data
+				
+				Controller -. logics
+				
+				View -> HTML, CSS
+				
+			component is formed by 3 files + 1 file for testing
+			
+				component.ts
+				component.html
+				component.css
+				
+				componet.spect.ts
+		Note:		
+				
+			from ES6 of JS, export feature
+		
+			typescript create a class
+			
+			
+		
+			MyClass.ts
+			
+			export class MyClass {
+			}
+			
+			In another file
+			
+			import { MyClass } from './MyClass';
+			MainClass.ts
+			
+			import { MyClass } from './MyClass';
+			
+			class MainClass {
+				data: MyClass;
+			}
+			
+		A component is a normal ts class, which is annotated with metadata, that annotation gives a special feature to become a special class (Component)
+		
+			
+		
+		From angular libraries , we have lot of annotations,
+		
+		export class MyComponent {
+		
+		}
+		
+		
+		@SomeAnnotations
+		export class MyComponent {
+		
+		}
+		
+		
+		@Component({
+			'selector' : 'my-app',
+			'template' : `
+				<h1 class="my-class"> This is my app component </h1>
+				<p> I have created through template key </p>
+			`,
+			'styles' : [ `.my-class {
+							font-size: 14px
+						}
+							
+						`, '']
+			
+			
+		})
+		export class MyComponent {
+		
+		}
+			
+		<app-root> </app-root> ?? => custom tags we are creating
+		
+		
+		<my-app> </my-app>
+		
+		
+		<h1> certain view 
+		
+		<p> => HTML tags
+		
+		
+		app will have 3 files;
+		
+			my-app.component.ts
+				
+				@Component({
+				'selector' : 'my-app',
+				'template' : `
+					<h1 class="my-class"> This is my app component </h1>
+					<p> I have created through template key </p>
+				`,
+				'styles' : [ `.my-class {
+								font-size: 14px
+							}`, '']
+				
+					
+				})
+				export class MyComponent {
+				
+					// Data and Logics
+				
+				}
+			-> it is also possible to create a component with one file
+			
+			my-app.component.html
+				<h1 class="my-class"> This is my app component </h1>
+				<p> I have created through template key </p>
+			
+				@Component({
+				'selector' : 'my-app',
+				'templateUrl' : './my-component.html',
+				'stylesUrl' : ['./my-component.component.css']
+				})
+				export class MyComponent {
+				
+					// Data and Logics
+				
+				}
+				
+			my-component.compoent.css
+			
+			
+			
+		How to create a component
+		
+			1. Manually
+			
+				create all 3 files manually
+				
+					suggestions
+					
+						file names should end with component prefix
+						
+							.component.html
+							.component.ts
+							.component.css
+						folder name should be same as component name
+						
+						use '-' for the seperation
+						
+							MyApp => my-app
+			
+			2. Use angular CLI
+			
+				ng generate component {component-name} 
+				
+				ng g c {component-name} --options
+							
+				ng g c -p=sony --inline-template=true --inline-style=true --skip-test=true --module=product.module
+	
+		Once u created, Register to Module
+		
+			
+			@NgModule({
+				declarations: [
+					AppComponent, MyFirstComponent, LoaderComponent
+				],
+				imports: [ SharedModule ], // Modules
+				exports: []
+				bootrstrap: [AppComponent]
+			})
+			export class AppModule {
+			
+			}
+			
+						
+			@NgModule({
+				declarations: [
+				 Loadercomponent
+				],
+				exports: [LoaderComponent]
+			})
+			SharedModule 
+				
+				
+			@NgModule({
+				declarations: [],
+				imports: [],
+				exports: []
+			})	
+			ProductModule
+			
+			
+			CartModule
+				
+			
+				
+			
+		titan	
+			'titan-dashboard'
+
+			'titan-product-list'
+			
+		
+	Deep diving on Components-
+	
+		Root component
+			will be placed at 'index.html'
+			cannot be rendered more than once
+			Placeholder
+			
+			
+		Other components
+			will be placed at any components
+			
+			it will be rendered as many times it mentioned
+			
+			widgets
+			
+			Reusable
+			
+		Relationship between components
+		
+			Root component going to be parent for all components
+			
+			Other components
+				
+				will be child/ grand child of root component
+				
+				they can be siblings
+				
+				they can host another component (Parent - child)
+				
+		components are isolated from each components
+		
+			component template and css are isolated from their parent and siblings
+			
+			
+	
+		Selector -> going to insists angular find element with this to render the template
+		
+			selector: 'app-first' -> <app-first> </app-first>, prefers to do in this way
+			
+			selector: '.app-first' -> will expect an element with a class app-first -> mix CSS classes with components
+			
+			selector: '[app-first]' -> will expect an element with attribute of app-first -> Directives are created with this way
+			
+	View encapsulation;
+		
+				Emulated
+				None
+				
+				
+	
+	Life cycle of an component;
+	
+		From the time component loaded to the angular To the time component Detached from user View
+		
+		Component is a class, it can implement many interfaces
+		
+		ngOnChanges()
+			Parent -> data: 'st' -> child
+					-> data: 'str' -> child ()
+			- when a data which is coming from parent getting changed
+			- implements OnChanges - Interface
+		
+		ngOnInit()
+			Component is class
+				constructor(){} -> create object 
+			After constructor this method will be called
+			- implement OnInit
+			
+		ngDoCheck ()
+		
+			-> any changes to ur template and Data
+			-> DoCheck Interface
+		
+		ngAfterContentInit()
+		
+			<app-first>
+				<ng-content>
+					Text here
+				</ng-content>
+				<app-second>
+					Text here
+					
+				</app-second>
+			</app-first>
+			<ng-content>
+			
+			<ng-content>
+			
+			- AfterContentInit - Interface
+		
+		ngAfterContentChecked ()
+			<app-first>
+				<ng-content>
+					Text here
+				</ng-content>
+				<app-second>
+					Text here
+					
+				</app-second>
+			</app-first>
+			<ng-content>
+			
+			<ng-content>
+			
+			AfterContentChecked Interface
+		ngAfterViewInit()
+			Init time of processing our template html
+		
+			<div>
+			</div>
+			
+			-. AfterViewInit Interface
+			
+		
+		ngAfterViewChecked()
+		
+			end time of processing our template html
+		
+			<div>
+			</div>
+			
+			- AfterViewChecked Interface
+		
+		ngOnDestroy()
+		
+			Will be called 
+				Just before ur component going to destroy ( coming out of user sight)
+				
+			clean up codes
+			
+			- OnDestroy - Interface
+			
+			
+		Poori App
+		
+		
+			Login ->
+				LoginComponet
+			
+			Navigation
+			
+				NavigationComponent
+			
+			They could able to see all dishes
+				dishes-list-component
+			
+			they can view a partical item
+			
+				dish-detail-component
+			
+			add to cart
+			
+				CartComponent
+			
+			Checkout
+				Checkout Component
+				
+		
+	Data Binding:
+	
+		Data from our controller to HTML
+		
+		
+		We have two types of Data Binding:
+		
+			1. One way data binding
+				-> Contoller to HTML , TS file to HTML
+					
+					myStr: string = 'string1';
+					
+					getData() { return 'str'; }
+					
+					getData() { return { a: 1 } }
+					
+					<p> </p>
+					
+					=> String interpolation
+					
+						{{ }} => We could able to present our component variables
+						
+						<p> {{ myStr }} </p>
+						
+						{{ 1 + 1 }} => 2
+						
+						{{ getData() }} = > ('str').toString() => 'str'
+						
+						
+						{{ getData() }} = > ({{a : 1 } ).toString() => [object Object]
+						
+						{{ variable ||  any expression that can be evaluvated and result as string ().toString() }}
+					
+					=> Property Binding
+						
+						[]
+						
+						<p id, name class style, innerHTML, innerText>
+	
+						</p>
+						
+						<p [innerHTML]="myStr" ></p>
+					
+					=> we should not mix both
+						<p [innerHTML]="{{myStr}}"> </p>
+						
+				
+				-> HTML to controller, HTML to ts
+				
+					Form controls
+					
+						input, buttons, checkbox
+						
+						
+					Event Binding
+					
+						() -> 
+					
+					button
+						onclick, onchange
+						(click)
+					
+					input
+						onchange, onfocus
+						
+					<button (click)="getData('ar', 'ad', $event)" > Click to update value </button> 
+					
+			
+			2. Two way data binding
+			
+				-> at a time both, Data Synced with HTML and Contoller
+				
+	
+	Directives
+	
+		Special attributes, which adds additional behaviours to our HTML element
+		
+		
+	1. Pre-defined Directives
+		Two types of directives:
+		
+		 i) Attribute Directives
+		 
+			Will add or enhance ur element
+				styles, classes, element always presents in HTML Tree
+			
+			it does not have control to remove ur element
+			
+			[]
+			
+			ngStyle
+			
+				[ngStyle]="{ background-color: 'red', 'color' : 'blue' }"
+				
+			ngClass
+			
+				[ngClass]="{ 'class names ' : boolean (true | false) }"
+				
+			on one element we can use multiple AD 
+			
+			<p [ngStyle]="" [ngClass]=""> </p> 
+		 
+		 
+		 ii) Structural Directive
+		 
+				It will on add or removing elements from HTML dom tree
+				
+				*
+				
+				ngIf
+					used to hide and show ur element
+					*ngIf="truthy | falsy'
+					else
+				ngFor
+					Looping or iterating ur object
+					
+					*ngFor="let item of items" *ngFor="let i of [1,2,3,4,5]"
+					
+					<p *ngFor="let item of items">
+
+						{{ item.name }}
+					</p>
+					
+					
+					<p *ngFor="let item of items; index as ind; first as isFirstItem; 
+												  last as isLastItem; odd as isOddIndexItem;
+												  even as isEvenItem">
+
+						{{ item }}
+					</p
+					
+					<p> {{ item }} </p>
+				
+				ngSwitch
+				
+					*ngSwitch=="str"					
+					
+					<p ngSwitchCase="'MyFirstComponent'"> </p>		
+
+					
+				<ng-container *ngIf="showTag" >
+					<p *ngFor="let item of items"> </p>
+				</ng-container>
+		
+		
+		<ng-template>
+		
+		</ng-template>
+		
+		<ng-container>
+				
+		 
+	2. User defined Directives
+					
+					
+	
+	How to integerate bootstrap framework into our project
+	
+		npm install bootstrap
+		
+		angualr.json
+		
+			styles and scripts array need to be changed
+		restrat
+		
+	
+	
+	Template Reference
+	
+		#
+		
+		<div #myDiv >
+			some content
+		</div>
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+			
+				
+				
+				
+				
+				
+				
+			
+			
+			
+		
+		
+	
+	
+		
+		
+		
+		
+		
+			
+			
+			
+			
+			
+			
+		
+		
+			
+		
+				
+							
+							
+							
+							
+			
+ 
+			
+			
+			
+			
+		
+		
+		
+	
+		
+				
+				
+				
+		
+		
+			
+	
+		
+			
+
+	
+	
+	
+		
+		
+
+			
+
+	
+	
+	
+	

@@ -1,0 +1,23 @@
+<div class="cart-items-container">
+  <h2>Items in your cart..</h2>
+  <div class="cart-list">
+    <div class="cart-item" *ngFor="let cartItem of cartList">
+      <div>
+        <img
+          class="img-fluid cart-img"
+          [src]="cartItem.imageUrls[0]"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div>
+        <p>{{ cartItem.name }}</p>
+        <p>Quantity : ()</p>
+        <p>Cost : {{ cartItem.price }}</p>
+      </div>
+    </div>
+    <div>
+      <p class="text-end me-3">Total Cost : ()</p>
+    </div>
+  </div>
+</div>

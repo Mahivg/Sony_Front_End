@@ -1,0 +1,45 @@
+.menu-list-page {
+  margin: 10px auto;
+  .menu-item-list-img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+  }
+  .menu-item-card {
+    border: 1px solid #a2a2a2;
+    margin: 1rem 2.5rem;
+    &:hover {
+      box-shadow: -7px -3px 10px 1px #a2a2a2;
+      cursor: pointer;
+    }
+  }
+  .menu-item-info {
+    transition: all 0.5ms ease-in;
+    div.info {
+      cursor: pointer;
+      > div {
+        &:first-child {
+          margin-top: 1rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+      &:hover {
+        div.short-desc {
+          display: none;
+        }
+        div.action {
+          margin-top: 1rem;
+          display: block;
+        }
+      }
+      div.action {
+        display: none;
+      }
+    }
+    .action {
+      height: 0px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="menu-list-page">
+  <h4>Find your dishes..</h4>
+
+  <div class="menu-list-container row">
+    <div class="menu-item-card col-md-3" *ngFor="let menuItem of menuList">
+      <div>
+        <img
+          class="menu-item-list-img text-center img-fluid"
+          [src]="menuItem.imageUrls[0]"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div class="menu-item-info">
+        <div class="info">
+          <div>
+            <p>{{ menuItem.name }}</p>
+            <p>{{ menuItem.price }}</p>
+          </div>
+          <div class="short-desc">
+            <p>{{ menuItem.shortDescription }}</p>
+          </div>
+          <div class="action">
+            <button class="btn btn-warning me-3">Add to cart</button>
+            <button class="btn btn-primary">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
