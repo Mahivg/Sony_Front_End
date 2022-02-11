@@ -1,4 +1,6 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, EventEmitter, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { Product } from '../models/Product';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-my-second',
@@ -10,7 +12,12 @@ export class MySecondComponent implements OnChanges, OnInit, DoCheck, AfterConte
 
   myStr: string = '';
 
-  constructor() {
+  // @Output()
+  // onProductUpdated = new EventEmitter<Product>();
+
+  newProduct: Product = new Product('7', 'Product 7', 'Product 7 Description', 2000);
+
+  constructor(private storageService: StorageService) {
     // Dependency Injection
   }
 
@@ -21,6 +28,13 @@ export class MySecondComponent implements OnChanges, OnInit, DoCheck, AfterConte
   ngOnInit(): void {
     console.log('ngOnInit : ');
     this.myStr = 'MyStr1';
+  }
+
+
+  pushNewProductToParent() {
+    this.newProduct.id = Math.random().toString();
+    this.storageService.addProduct(this.newProduct);
+    // this.onProductUpdated.emit(this.newProduct);
   }
 
   ngDoCheck(): void {

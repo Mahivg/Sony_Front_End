@@ -82,3 +82,17 @@
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
+
+<div id="product-list" class="row">
+  <div *ngFor="let prod of products" class="col-md-3 m-3">
+    <p>{{ prod.name }} _ {{ prod.id }}</p>
+    <p>{{ prod.description }}</p>
+    <p>{{ prod.price }}</p>
+  </div>
+</div>
+
+<div>
+  <button class="btn btn-success" (click)="updateProductsWithStorage()">
+    Update with Storage
+  </button>
+</div>

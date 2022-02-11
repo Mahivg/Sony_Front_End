@@ -13,12 +13,19 @@
     </div>
 
     <div *ngIf="showFirst">
+      <!-- <my-first [products]="appProducts"></my-first> -->
       <my-first></my-first>
     </div>
 
     <div *ngIf="showSecond">
-      <app-my-second></app-my-second>
+      <app-my-second
+        (onProductUpdated)="receiveProductFromChild($event)"
+      ></app-my-second>
     </div>
+    <!--
+    <app-my-second
+      (onProductUpdated)="receiveProductFromChild($event)"
+    ></app-my-second> -->
 
     <div>
       <button (click)="toggleSecondComponent = !toggleSecondComponent">

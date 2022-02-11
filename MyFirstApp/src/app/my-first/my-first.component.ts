@@ -1,4 +1,6 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from "@angular/core";
+import { Product } from "../models/Product";
+import { StorageService } from "../services/storage.service";
 
 @Component({
   selector: 'my-first',
@@ -14,7 +16,7 @@ import { Component, ElementRef, ViewChild } from "@angular/core";
   templateUrl: './my-first.component.html',
   styleUrls: ['./my-first.component.css']
 })
-export class MyFirstComponent {
+export class MyFirstComponent implements OnInit {
   title = 'MyFirstComponent';
   myNum: number = 10;
 
@@ -24,8 +26,17 @@ export class MyFirstComponent {
 
   myArr =  [1, 2, 3, 4, 5];
 
+  // @Input()
+  products: Product[] = [];
+
   @ViewChild('myNumInput')
   myNumberInput: ElementRef;
+
+  constructor(private storageService: StorageService) {}
+
+  ngOnInit(): void {
+    this.products = this.storageService.getProducts();
+  }
 
   setCompTitle(newTitle: string) {
     this.title = newTitle;
@@ -36,6 +47,12 @@ export class MyFirstComponent {
     console.dir(this.myNumberInput);
     this.myNum = +this.myNumberInput.nativeElement.value;
   }
+
+
+  updateProductsWithStorage () {
+    this.products = this.storageService.getProducts();
+  }
+
 
 
 }

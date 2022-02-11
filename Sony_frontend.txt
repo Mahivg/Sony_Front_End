@@ -1,4 +1,4 @@
-
+GIT Access Token : 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
 
 Front End
 
@@ -1864,6 +1864,76 @@ Ways to bring stylings to HTML
 			
 		
 		
+		
+	Component Communication:
+	
+		Parent - Child
+		
+			One component HTML should hold thie another component
+			
+			app.component.html -> parent (top to bottom) 
+			
+				<my-first> </my-first> -> Child
+			
+			Now Child want to communicate:			
+			
+				app.component.html -> parent -> receiveMethod 
+							
+								layer from angular for the communication
+				
+					<my-first> </my-first> -> Child(bottom to top) pushMethod
+		
+		Siblings 
+		
+			Input and Output also can be used
+			
+		
+	Service classes for our application
+	
+		In Angualr service classes are Singleton
+		
+			Only one reference of that object on entire application lifetime
+			
+			
+			
+		
+		create ur service class
+		
+			class MyService {
+			
+			}
+			
+			In angular, we have lot of predefined service classes
+			
+			we need to register in angular as service
+			
+			=> while loading app, Angular will create a instance for that class, and store in its Object's Pool
+			
+				MyService@00011nkn11
+			
+				1. Registering in module
+					providers : [ MyService ]
+					
+				2. Annotate with @Injectable({ providedIn: 'root'})
+					
+			> Dependency Injection
+			
+				User is not responsible for object creation. Ur framework will do that for u.
+				
+				in component
+				
+					constructor(private myService: MyService) {}
+				
+						
+				
+					
+					
+			
+			
+		
+		
+		
+	
 		
 		
 		
