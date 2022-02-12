@@ -1,4 +1,3 @@
-GIT Access Token : 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
 
 Front End
 
