@@ -1923,6 +1923,34 @@ Ways to bring stylings to HTML
 				in component
 				
 					constructor(private myService: MyService) {}
+					
+		Deep dive into service
+		
+			Singleton =>
+			
+				Module Level
+				
+					if that module is Root Module
+						The service object is going to be Singleton for entire application
+						
+					SubModule
+					
+						ProductModule
+						
+						 then the service class going to be singleton instance within that module level
+						 
+				Component
+				
+					that component and its child going to get same instance
+					
+						=>  it mentioned in Root component then again is goint to be singleton entire application
+						
+		
+		Routing:
+		
+			Based on URL change in the address bar of browser, page will be changed
+					
+					
 				
 						
 				

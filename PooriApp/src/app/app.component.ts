@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PooriApp';
+  currentTabName: string = 'login';
+
+  receiveTabChange(tabName: string) {
+    this.currentTabName = tabName;
+  }
+
+
 }

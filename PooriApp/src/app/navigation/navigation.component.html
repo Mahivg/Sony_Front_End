@@ -22,13 +22,16 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item active" (click)="emitTabName('menuList')">
         <a class="nav-link" href="#">Shop</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active" (click)="emitTabName('menuDetail')">
+        <a class="nav-link" href="#">Detail</a>
+      </li>
+      <li class="nav-item" (click)="emitTabName('cart')">
         <a class="nav-link" href="#">Cart</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" (click)="emitTabName('login')">
         <a class="nav-link" href="#">Login</a>
       </li>
     </ul>

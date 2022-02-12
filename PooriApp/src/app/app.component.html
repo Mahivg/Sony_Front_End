@@ -1,14 +1,19 @@
-<sony-navigation></sony-navigation>
+<sony-navigation (onTabChange)="receiveTabChange($event)"></sony-navigation>
 <div class="container">
-  <h1>Poori App</h1>
+  <div *ngIf="currentTabName == 'login'">
+    <sony-login> </sony-login>
+  </div>
 
-  <sony-login> </sony-login>
+  <div *ngIf="currentTabName == 'menuList'">
+    <sony-menu-list></sony-menu-list>
+  </div>
 
-  <sony-menu-list></sony-menu-list>
+  <div *ngIf="currentTabName == 'menuDetail'">
+    <sony-menu-item-detail></sony-menu-item-detail>
+  </div>
 
-  <sony-menu-item-detail></sony-menu-item-detail>
-
-  <sony-cart></sony-cart>
-
-  <sony-checkout></sony-checkout>
+  <div *ngIf="currentTabName == 'cart'">
+    <sony-cart></sony-cart>
+    <sony-checkout></sony-checkout>
+  </div>
 </div>

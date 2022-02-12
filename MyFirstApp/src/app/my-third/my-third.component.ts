@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'sony-my-third',
@@ -12,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyThirdComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
   }
