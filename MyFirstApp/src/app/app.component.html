@@ -1,8 +1,10 @@
-<div>
+<app-nav (tabChange)="onTabChangeReceived($event)"></app-nav>
+<div class="container">
   <h1>This is App.component.html (Root)</h1>
 
   <div>
-    <div class="d-flex justify-content-center align-items-center mx-3">
+    <router-outlet> </router-outlet>
+    <!-- <div class="d-flex justify-content-center align-items-center mx-3">
       <button class="btn btn-primary mx-2" (click)="changeTab(true, false)">
         First Component
       </button>
@@ -10,27 +12,31 @@
       <button class="btn btn-warning mx-2" (click)="changeTab(false, true)">
         Second component
       </button>
+    </div> -->
+
+    <!-- <div *ngIf="currentTab == 'login'">
+      <my-login (onUserLogin)="onLogin($event)"></my-login>
     </div>
 
-    <div *ngIf="showFirst">
-      <!-- <my-first [products]="appProducts"></my-first> -->
+    <div *ngIf="currentTab == 'first'">
+       <my-first [products]="appProducts"></my-first>
       <my-first></my-first>
     </div>
 
-    <div *ngIf="showSecond">
+    <div *ngIf="currentTab == 'second'">
       <app-my-second
         (onProductUpdated)="receiveProductFromChild($event)"
       ></app-my-second>
-    </div>
+    </div> -->
     <!--
     <app-my-second
       (onProductUpdated)="receiveProductFromChild($event)"
     ></app-my-second> -->
 
-    <div>
+    <!-- <div>
       <button (click)="toggleSecondComponent = !toggleSecondComponent">
         Toggle Second
       </button>
-    </div>
+    </div> -->
   </div>
 </div>

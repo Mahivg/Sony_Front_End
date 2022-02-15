@@ -1492,7 +1492,7 @@ Ways to bring stylings to HTML
 				declarations: [
 					AppComponent, MyFirstComponent, LoaderComponent
 				],
-				imports: [ SharedModule ], // Modules
+				imports: [ SharedModule,  ], // Modules
 				exports: []
 				bootrstrap: [AppComponent]
 			})
@@ -1515,7 +1515,15 @@ Ways to bring stylings to HTML
 				imports: [],
 				exports: []
 			})	
+			
+			producRoutes
+			
 			ProductModule
+			
+				its own components
+				own directives
+				servicess				
+				RouterModule.forChild(producRoutes);
 			
 			
 			CartModule
@@ -1923,6 +1931,170 @@ Ways to bring stylings to HTML
 				in component
 				
 					constructor(private myService: MyService) {}
+					
+		Deep dive into service
+		
+			Singleton =>
+			
+				Module Level
+				
+					if that module is Root Module
+						The service object is going to be Singleton for entire application
+						
+					SubModule
+					
+						ProductModule
+						
+						 then the service class going to be singleton instance within that module level
+						 
+				Component
+				
+					that component and its child going to get same instance
+					
+						=>  it mentioned in Root component then again is goint to be singleton entire application
+						
+					
+						
+		
+		Routing:
+		
+			Based on URL change in the address bar of browser, page will be changed
+			
+			
+		Steps:
+		
+			1. Import the routing Module
+			
+			2. We need to define routes
+			
+				Type Route
+				
+				Array of Route Type 
+				
+				Route : {
+					path: 'first',
+					component: FirstComponet
+				}
+			
+				
+			
+			3. Register the route to route module (forRoot or forChild)
+			
+			4. Make sure route module imported in AppModule (Any module)
+			
+			5. For that we have to declare a placeholder
+				<router-outlet> </router-outlet>
+			
+			6. We need to trigger or do something for URL change
+			
+					routerLink="" 
+						-> Absolute Path
+							localhost:4200/login
+							
+							localhost:4200/products/001/detail
+							
+							
+								routerLink="/products/001/detail"
+								
+								routerLink="/admin/products"
+								
+								routerLink="{{ '/products/' + {{ prod.id }} + '/detail' }}"
+								
+								routerLink="{{ ['/products', prod.id, 'detail' ] }}"						
+								
+								
+								routerLink="{{ ['/products', '001', 'detail' ] }}" => segments
+								
+								[routerLink]="['/products', '001', 'detail' ]"
+						
+						-> Relative Path
+							=> default
+								constructing next to previous one
+								
+								login:4200/sadkjsankdsj/login
+								
+							routerLink="/login" -> relative to current route
+					
+					[routerLink]="'test'"
+					
+		Deep Diving Routes
+		
+				{
+					path: 'login',
+					component: LoginComponent
+				},
+				
+			{ 
+				path: "",
+				redirectTo: 'login',
+				pathMatch: 'full'
+			} => Default Route,
+				
+			{ 
+				path: "**",
+				compoent: PagNotFound
+			} => WildCard Route
+			
+	
+	* Whatever we have done those are all routing from HTML
+	
+	Programatically we can route:
+	
+		Default Route => LoginComponent
+	
+		Login => isValid => First Component
+		
+	
+	Programatic Navigation
+	
+		=> Router ( Navigation), ActivatedRoute
+		
+		=> Use methods within that service to navigate
+		
+			this.router.navigateByUrl
+			this.router.navigate([])
+		
+	Passing Data in the route
+	
+		1. Query Parameter
+		
+			
+			created by adding / appedning data after '?'
+			
+			ex: http://localhost:4200/login?abc=trr&ch=3435
+			
+				abc: trr
+				ch: 3435
+		 How to  create query param		 
+		 
+			1. HTML
+				routerLink=""  [queryParams]="{key: value, }"
+			
+			
+			2. Programatic
+			this.router.navigateByUrl
+			
+				give abosolute URL with the query param
+			this.router.navigate([])
+				pass NavigationExtras Object
+				
+				this.router.navigate([], { queryParams: { abc: 1212 }})
+				
+		We need to know how to receive in the component
+		
+			ActivatedRoute instance in our component
+			
+			 static:  this.route(activatedRoute).snapshot.queryParams => at that time(when the route change happened) that object	
+			 
+			 for Dyanamic:
+			 
+				we need to listen to query parameter change
+			 
+				
+		
+		
+					
+					
 				
 						
 				

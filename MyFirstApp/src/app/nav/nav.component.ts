@@ -1,13 +1,13 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'sony-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  selector: 'app-nav',
+  templateUrl: './nav.component.html',
+  styleUrls: ['./nav.component.css']
 })
-export class NavigationComponent implements OnInit {
+export class NavComponent implements OnInit {
 
-  @Output()
+  @Output('tabChange')
   onTabChange = new EventEmitter<string>();
 
   constructor() { }
@@ -15,7 +15,7 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  emitTabName(tabName: string) {
+  changeTab(tabName: string) {
     this.onTabChange.emit(tabName);
   }
 

@@ -8,6 +8,8 @@ import { MenuListComponent } from './menu-list/menu-list.component';
 import { MenuItemDetailComponent } from './menu-item-detail/menu-item-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,12 @@ import { CheckoutComponent } from './checkout/checkout.component';
     MenuListComponent,
     MenuItemDetailComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    PageNotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

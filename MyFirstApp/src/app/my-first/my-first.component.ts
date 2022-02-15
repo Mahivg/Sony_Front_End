@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { Product } from "../models/Product";
 import { StorageService } from "../services/storage.service";
 
@@ -32,9 +33,13 @@ export class MyFirstComponent implements OnInit {
   @ViewChild('myNumInput')
   myNumberInput: ElementRef;
 
-  constructor(private storageService: StorageService) {}
+  constructor(private storageService: StorageService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    const routeParams = this.route.snapshot.queryParams;
+    console.log(routeParams);
+    const firstParam = routeParams['ach'];
+    console.log(firstParam);
     this.products = this.storageService.getProducts();
   }
 
