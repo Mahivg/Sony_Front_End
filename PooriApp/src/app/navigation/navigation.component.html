@@ -34,17 +34,18 @@
       <li class="nav-item" (click)="emitTabName('login')">
         <a class="nav-link" href="#">Login</a>
       </li> -->
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="menu-list">Shop</a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="login" routerLinkActive="active"
+          >Login</a
+        >
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink="menu-detail">Detail</a>
+        <a class="nav-link" routerLink="menu-list" routerLinkActive="active"
+          >Shop</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="cart">Cart</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="login">Login</a>
+        <a class="nav-link" routerLink="cart" routerLinkActive="active">Cart</a>
       </li>
     </ul>
   </div>

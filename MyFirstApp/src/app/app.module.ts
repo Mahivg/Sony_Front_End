@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app.routing';
+import { FirstDetailComponent } from './first-detail/first-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app.routing';
     MyThirdComponent,
     NavComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FirstDetailComponent
   ],
   imports: [
     BrowserModule,

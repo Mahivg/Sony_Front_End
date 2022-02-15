@@ -29,6 +29,9 @@ export class StorageService {
   getProducts() : Product[] {
     return this.products;
   }
+  getProductById(id: string) : Product {
+    return this.products.find(p => p.id == id);
+  }
 
   addProduct(product: Product) {
     this.products.push(product);

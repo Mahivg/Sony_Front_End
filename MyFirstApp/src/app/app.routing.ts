@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { FirstDetailComponent } from "./first-detail/first-detail.component";
 import { LoginComponent } from "./login/login.component";
 import { MyFirstComponent } from "./my-first/my-first.component";
 import { MySecondComponent } from "./my-second/my-second.component";
@@ -13,6 +14,10 @@ const appRoutes: Routes = [
   {
     path: 'first',
     component: MyFirstComponent
+  },
+  {
+    path: 'first/:id',
+    component: FirstDetailComponent
   },
   {
     path: 'second',

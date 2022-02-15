@@ -36,11 +36,16 @@ export class MyFirstComponent implements OnInit {
   constructor(private storageService: StorageService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.queryParams;
-    console.log(routeParams);
-    const firstParam = routeParams['ach'];
-    console.log(firstParam);
+    // const routeParams = this.route.snapshot.queryParams;
+    // console.log(routeParams);
+    // const firstParam = routeParams['ach'];
+    // console.log(firstParam);
     this.products = this.storageService.getProducts();
+    this.route.queryParams.subscribe(routeParams => {
+      console.log(routeParams);
+      const firstParam = routeParams['ach'];
+      console.log(firstParam);
+    });
   }
 
   setCompTitle(newTitle: string) {

@@ -17,7 +17,7 @@ const routes : Routes = [
     component: MenuListComponent
   },
   {
-    path: 'menu-detail',
+    path: 'menu-list/:menuId/detail',
     component: MenuItemDetailComponent
   },
   {

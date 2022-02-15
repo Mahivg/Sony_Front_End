@@ -6,6 +6,10 @@
 </div>
 
 <div>
+  <a routerLink="/first/101/detail"> Go to detail</a>
+</div>
+
+<div>
   <h2>One way Data Binding</h2>
 
   <div>
@@ -92,6 +96,10 @@
     <p>{{ prod.name }} _ {{ prod.id }}</p>
     <p>{{ prod.description }}</p>
     <p>{{ prod.price }}</p>
+    <div>
+      <!-- <a routerLink="{{ '/first/' + prod.id }}"> Go to detail</a> -->
+      <a [routerLink]="['/first', prod.id]"> Go to detail</a>
+    </div>
   </div>
 </div>
 
