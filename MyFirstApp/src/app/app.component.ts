@@ -9,7 +9,7 @@ import { StorageService } from './services/storage.service';
 })
 export class AppComponent implements OnInit {
   title = 'MyFirstApp';
-  currentTab: string = 'first';
+  currentTab: string = 'login';
   toggleSecondComponent : boolean = true;
   showFirst: boolean = true;
   showSecond: boolean = false;
@@ -35,5 +35,9 @@ export class AppComponent implements OnInit {
 
   onTabChangeReceived(tabName: string) {
     this.currentTab = tabName;
+  }
+
+  onLogin(isValidUser: boolean) {
+    this.currentTab = isValidUser ? 'first' : 'login';
   }
 }

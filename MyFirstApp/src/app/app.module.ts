@@ -7,17 +7,25 @@ import { MySecondComponent } from './my-second/my-second.component';
 import { MyThirdComponent } from './my-third/my-third.component';
 import { StorageService } from './services/storage.service';
 import { NavComponent } from './nav/nav.component';
-
+import { LoginComponent } from './login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app.routing';
+import { FirstDetailComponent } from './first-detail/first-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
     MyFirstComponent,
     MySecondComponent,
     MyThirdComponent,
-    NavComponent
+    NavComponent,
+    LoginComponent,
+    PageNotFoundComponent,
+    FirstDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   // providers: [ StorageService ],
   providers: [],

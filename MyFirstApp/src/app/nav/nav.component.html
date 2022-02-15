@@ -13,11 +13,33 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active" (click)="changeTab('first')">
+      <!-- <li class="nav-item active" (click)="changeTab('login')">
+        <a class="nav-link" href="#">login</a>
+      </li>
+      <li class="nav-item" (click)="changeTab('first')">
         <a class="nav-link" href="#">First</a>
       </li>
       <li class="nav-item" (click)="changeTab('second')">
         <a class="nav-link" href="#">Second</a>
+      </li> -->
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="login"
+          routerLinkActive="active"
+          [queryParams]="{ abc: 'trr', ch: 3435 }"
+          >login</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="first" routerLinkActive="active"
+          >First</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="second" routerLinkActive="active"
+          >Second</a
+        >
       </li>
     </ul>
   </div>

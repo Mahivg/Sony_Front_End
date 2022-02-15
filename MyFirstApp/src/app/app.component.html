@@ -3,6 +3,7 @@
   <h1>This is App.component.html (Root)</h1>
 
   <div>
+    <router-outlet> </router-outlet>
     <!-- <div class="d-flex justify-content-center align-items-center mx-3">
       <button class="btn btn-primary mx-2" (click)="changeTab(true, false)">
         First Component
@@ -13,8 +14,12 @@
       </button>
     </div> -->
 
+    <!-- <div *ngIf="currentTab == 'login'">
+      <my-login (onUserLogin)="onLogin($event)"></my-login>
+    </div>
+
     <div *ngIf="currentTab == 'first'">
-      <!-- <my-first [products]="appProducts"></my-first> -->
+       <my-first [products]="appProducts"></my-first>
       <my-first></my-first>
     </div>
 
@@ -22,7 +27,7 @@
       <app-my-second
         (onProductUpdated)="receiveProductFromChild($event)"
       ></app-my-second>
-    </div>
+    </div> -->
     <!--
     <app-my-second
       (onProductUpdated)="receiveProductFromChild($event)"

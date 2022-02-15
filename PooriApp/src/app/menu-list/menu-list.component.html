@@ -2,7 +2,11 @@
   <h4>Find your dishes..</h4>
 
   <div class="menu-list-container row">
-    <div class="menu-item-card col-md-3" *ngFor="let menuItem of menuList">
+    <div
+      class="menu-item-card col-md-3"
+      *ngFor="let menuItem of menuList"
+      [routerLink]="['/menu-list', menuItem.id, 'detail']"
+    >
       <div>
         <img
           class="menu-item-list-img text-center img-fluid"

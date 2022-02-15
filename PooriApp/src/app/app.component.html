@@ -1,6 +1,6 @@
 <sony-navigation (onTabChange)="receiveTabChange($event)"></sony-navigation>
 <div class="container">
-  <div *ngIf="currentTabName == 'login'">
+  <!-- <div *ngIf="currentTabName == 'login'">
     <sony-login> </sony-login>
   </div>
 
@@ -15,5 +15,6 @@
   <div *ngIf="currentTabName == 'cart'">
     <sony-cart></sony-cart>
     <sony-checkout></sony-checkout>
-  </div>
+  </div> -->
+  <router-outlet></router-outlet>
 </div>
