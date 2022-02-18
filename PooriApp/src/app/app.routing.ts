@@ -5,6 +5,7 @@ import { LoginComponent } from "./login/login.component";
 import { MenuItemDetailComponent } from "./menu-item-detail/menu-item-detail.component";
 import { MenuListComponent } from "./menu-list/menu-list.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { AuthGaurd } from "./shared/services/auth.gaurd";
 
 
 const routes : Routes = [
@@ -14,7 +15,8 @@ const routes : Routes = [
   },
   {
     path: 'menu-list',
-    component: MenuListComponent
+    component: MenuListComponent,
+    canActivate: [AuthGaurd]
   },
   {
     path: 'menu-list/:menuId/detail',
@@ -22,7 +24,8 @@ const routes : Routes = [
   },
   {
     path: 'cart',
-    component: CartComponent
+    component: CartComponent,
+    canActivate: [AuthGaurd]
   },
   {
     path: 'page-not-found',
@@ -41,7 +44,7 @@ const routes : Routes = [
 ]
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes)],
+  imports: [ RouterModule.forRoot(routes, { useHash: true })],
   exports: [ RouterModule ]
 
 })

@@ -22,7 +22,7 @@
       <li class="nav-item" (click)="changeTab('second')">
         <a class="nav-link" href="#">Second</a>
       </li> -->
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!isUserLoggedIn">
         <a
           class="nav-link"
           routerLink="login"
@@ -31,15 +31,18 @@
           >login</a
         >
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isUserLoggedIn">
         <a class="nav-link" routerLink="first" routerLinkActive="active"
           >First</a
         >
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isUserLoggedIn">
         <a class="nav-link" routerLink="second" routerLinkActive="active"
           >Second</a
         >
+      </li>
+      <li class="nav-item" *ngIf="isUserLoggedIn" (click)="logout()">
+        <a class="nav-link">Logout</a>
       </li>
     </ul>
   </div>

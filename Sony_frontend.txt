@@ -2089,11 +2089,238 @@ Ways to bring stylings to HTML
 			 for Dyanamic:
 			 
 				we need to listen to query parameter change
+				
+							Observable<Params>
+				this.route.params.subscribe(params => {})
+				
+				this.route.queryParams.subscribe(params => {})
+				
+		
+		Nested Route
+		
+			/first
+			
+				FirstComponent
+				
+						<router-outlet> </router-outlet>
+						
+							FirstDetailComponent
+							
+		Routes: 
+		
+		{
+			path: 'first',
+			component: FirstCompnent,
+			children: [
+				path: ':id', /first/:id
+				component: FIrstDetailCompnent,
+			]
+			
+		}
 			 
+			
+		
+		
+		Router Gaurd:
+		
+			Before route change happens we can create a check to ensure the route change is valid
+			
+			
+			Login --- Valid -->  FirstComponent (Gaurding)
+			
+			1. Track whether user logged in or not
+			
+			2. If logged in || he is a valid user => FirstComponent
+			
+			3. Stay is login itself
+			
+		How to work with Router Gaurd
+		
+			1. A service class 
+			
+			2. It implements an interface called CanActivate (Angular Router)
+			
+			3. We need override canActivate method of interface
+			
+			4. within canActivate we have to whatever calculation or computation we need to do
+			
+			5. Finally we need to return a boolean.
+			
+			6. True -> allows the navigation
+			
+			7. False -> navigation will be prevented.
+		
+			8. Register the gaurd to whatever the path u want to protect.
+			
+				canActivate key in Routes
+				
+				canActivateChild key in Routes
+		
+		
+		ProductModule
+		
+			product.routes.ts
+			
+			RouterModule.forChild(pRoutes);		
+			
+			
+			path: 'product', 
+			
+			loadChildren : () => imports('./products.module').then(p => p.ProductModule);
+			
+			
+			
+		AppModule
+			Imports: [ProductModule]
+			
+		
+		Observables
+		
+			Why we need observable
+			
+				to create an observer pattern in our coding
+				
+				there will be an event (published | triggerd)   =>  the event will be listened
+				
+				publish   => Subscriber
+				
+				
+				
+			Parent Child
+			
+				INput, output
+				
+				parent component and child component should be physically present
+				
+				
+			Service
+			
+				it can't be reactive
+				
+				login component -> in LoginService -> isUserLoggedIn as true
+				
+				
+				product component -> 
+				
+					ngOnInit() {
+					
+						Login Service
+					
+						isUserLoggedIn status we are doing some logic
+						
+						click on product					
+						
+						
+						
+				if user is idle for 15 mins we are signing them out
+				
+					isUserLoggedIn = false;
+				
+				
+		Observable => reactive library => rxjs library 
+		
+		
+		Observable
+		
+			Any event => emits or pubish some value
+		
+		
+		Observer
+		
+			handleData, handleError, completeTheEvent
+		
+		
+		const observer = new Observale(observable => {});
+				 
+				 
+		const obsSub = observer.subscribe(data => {});
+		
+		
+		this.route.params.subscribe(data=> {});
+		
+		
+		User created observable
+		
+			obsSub.unsubscribe();
+			
+			
+	Subject type
+	
+	
+		overlay of Observable
+		
+		which will give you observable and observer seperately. in two variable
+		
+		BehaviourSubject
+		
+			this need initail value
+			
+			previous emitted value cannot be retained
+			
+			myBhSubject = new BehaviourSubject<boolean>(false); => observeable			
+			
+			myBhSubjectObserver = myBhSubject.asObservable(); => observer
+			
+			we can have multiple 
+					
+		
+		replaySubject
+		
+			this dont need initial value
+		
+			we can get previous emitted value
+			
+			myRPSubject = new ReplaySubject<boolean>(); => observeable			
+			
+			myRPSubjectObserver = myRPSubject.asObservable(); => observer
+			
+			
+			
+		Communicaion Scenario
+		
+			Login -->  Service(state will same across app)  <-- Navbar
+			
+			
+			Here login component should have producer
+			
+			
+			Navbar component should have receiver
+			
+			service
+			
+				create two variables in service
+				
+					1. Observable => Producer
+					
+						authStateChanged = new BehaviorSubject<boolean>(false);
+						
+						
+					2. Observer => Receiver
+						
+						authStateChanged$ = this.authStateChanged.asObservable();
+						
+			Login componet
+			Navbar component , I requested same service
+			
+			
+			From Login component
+			
+			after user clicking on submit
+			
+				this.service.authStateChanged.next(userState);
+				
+				
+			NavbarComponent
+			
+				this.service.authStateChanged$.subscribe(data => {
+					//this will be called
+				});
+			
+				
+		
 				
 		
 		
-					
 					
 				
 						

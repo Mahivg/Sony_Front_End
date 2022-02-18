@@ -5,15 +5,22 @@
     <div class="col-md-6">
       <div class="form-group">
         <label for="" class="control-label"> User Name </label>
-        <input type="text" id="txtUserName" class="form-control" />
+        <input type="text" id="txtUserName" class="form-control" #txtUserName />
       </div>
 
       <div class="form-group mt-2">
         <label for="" class="control-label"> Password </label>
-        <input type="password" id="txtPassword" class="form-control" />
+        <input
+          type="password"
+          id="txtPassword"
+          class="form-control"
+          #txtPassword
+        />
       </div>
       <div class="form-group mt-2">
-        <button type="button" class="btn btn-primary">LOGIN</button>
+        <button type="button" class="btn btn-primary" (click)="login()">
+          LOGIN
+        </button>
       </div>
     </div>
   </div>

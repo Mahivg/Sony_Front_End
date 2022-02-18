@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 import { Product } from "../models/Product";
 import { User } from "../models/User";
 
@@ -6,6 +7,11 @@ import { User } from "../models/User";
   providedIn: 'root'
 })
 export class StorageService {
+
+  private isUserLoggedIn: boolean = false;
+
+  authStateChanged = new BehaviorSubject<boolean>(false); // Singleton variable
+  authStateChanged$ = this.authStateChanged.asObservable(); // singleton variable
 
   constructor(){}
 
@@ -47,6 +53,14 @@ export class StorageService {
       return user.password.toLowerCase() == password.toLowerCase();
     }
     return false;
+  }
+
+  getUserLoggedInStatus() : boolean {
+    return this.isUserLoggedIn;
+  }
+
+  setUserLoggedInStatus(isValid: boolean) {
+    this.isUserLoggedIn = isValid;
   }
 
 

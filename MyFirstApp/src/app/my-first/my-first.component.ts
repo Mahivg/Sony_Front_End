@@ -46,6 +46,10 @@ export class MyFirstComponent implements OnInit {
       const firstParam = routeParams['ach'];
       console.log(firstParam);
     });
+
+    this.storageService.authStateChanged$.subscribe(status => {
+      console.log("NavComponent --> ngOnInit() --> Received : " + status);
+    });
   }
 
   setCompTitle(newTitle: string) {

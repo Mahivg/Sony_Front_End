@@ -30,9 +30,17 @@ export class LoginComponent implements OnInit {
     const username = this.inputUserName.nativeElement.value;
     const password = this.inputUserPass.nativeElement.value;
     const isLogin = this.storageService.validateUser(username, password);
+    this.storageService.setUserLoggedInStatus(isLogin);
+
+
+    console.log("LoginComponent --> login() --> Emits : " + isLogin);
+    this.storageService.authStateChanged.next(isLogin);
+
+    console.log('Is Valid Login : ' + isLogin);
     if(isLogin) {
       // this.onUserLogin.emit(true);
       // this.router.navigateByUrl('/first?abc=232&cdc=2121');
+
       this.router.navigate(['/first'], { queryParams: {
         ach: 23432,
         asdas: 3232

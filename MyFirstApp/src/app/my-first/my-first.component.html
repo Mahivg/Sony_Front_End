@@ -1,110 +1,120 @@
 <h1>This is My First created component</h1>
 <p>Created manually by creating files</p>
 
-<div>
-  <a routerLink="/first" [queryParams]="{ sss: 122323 }"> Change Query Param</a>
-</div>
-
-<div>
-  <a routerLink="/first/101/detail"> Go to detail</a>
-</div>
-
-<div>
-  <h2>One way Data Binding</h2>
-
-  <div>
-    <h3>Controller to HTML</h3>
-
-    <p
-      [ngStyle]="{
-        'background-color':
-          title == 'MyFirstComponent' ? 'yellow' : 'lightgreen',
-        padding: '10px',
-        color: title == 'MyFirstComponent' ? 'red' : 'black'
-      }"
-    >
-      This is title of this component : {{ title }} {{ myNum }} {{ myObj }}
-      {{ myArr }}
-    </p>
-
-    <p
-      [innerHTML]="'This is title of this component : PB [] : ' + title"
-      [ngClass]="{
-        title1: myNum % 2 == 0,
-        title2: myNum % 2 != 0
-      }"
-    ></p>
-  </div>
-
-  <div class="col-md-6 m-4">
-    <h3>HTML to Controller</h3>
-
-    <p>Event Binding ()</p>
-
-    <input type="number" class="form-control col-md-6" #myNumInput />
-
-    <button class="btn btn-success mt-3" (click)="updateMyNum()">
-      Click to Update Title
-    </button>
-  </div>
-</div>
-
-<div>
-  <h1>NG IF demo</h1>
-
-  <div class="box1" *ngIf="toggleDiv; else showdiv2">
-    Hi, I am Div 1, Currently u r seeing me !!
-  </div>
-
-  <ng-template #showdiv2>
-    <!-- Template Reference -->
-    <div class="box1">Hi, I am Div 2, Currently u r seeing me !!</div>
-  </ng-template>
-</div>
-
-<div
-  *ngFor="
-    let i of myArr;
-    index as ind;
-    first as isFirstItem;
-    last as isLastItem;
-    odd as isOddIndexItem;
-    even as isEvenItem
-  "
->
-  <p [id]="ind">{{ i }}</p>
-</div>
-
-<div class="card" style="width: 18rem">
-  <img
-    class="card-img-top"
-    src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17ee3cbb608%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17ee3cbb608%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1937484741211%22%20y%3D%2296.24000034332275%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-    alt="Card image cap"
-  />
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-<div id="product-list" class="row">
-  <div *ngFor="let prod of products" class="col-md-3 m-3">
-    <p>{{ prod.name }} _ {{ prod.id }}</p>
-    <p>{{ prod.description }}</p>
-    <p>{{ prod.price }}</p>
+<div class="row">
+  <div class="col-md-6">
     <div>
-      <!-- <a routerLink="{{ '/first/' + prod.id }}"> Go to detail</a> -->
-      <a [routerLink]="['/first', prod.id]"> Go to detail</a>
+      <a routerLink="/first" [queryParams]="{ sss: 122323 }">
+        Change Query Param</a
+      >
+    </div>
+
+    <div>
+      <a routerLink="/first/101/detail"> Go to detail</a>
+    </div>
+
+    <div id="product-list" class="row">
+      <div *ngFor="let prod of products" class="col-md-3 m-3">
+        <p>{{ prod.name }} _ {{ prod.id }}</p>
+        <p>{{ prod.description }}</p>
+        <p>{{ prod.price }}</p>
+        <div>
+          <!-- <a routerLink="{{ '/first/' + prod.id }}"> Go to detail</a> -->
+          <a [routerLink]="['/first', prod.id]"> Go to detail</a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2>One way Data Binding</h2>
+
+      <div>
+        <h3>Controller to HTML</h3>
+
+        <p
+          [ngStyle]="{
+            'background-color':
+              title == 'MyFirstComponent' ? 'yellow' : 'lightgreen',
+            padding: '10px',
+            color: title == 'MyFirstComponent' ? 'red' : 'black'
+          }"
+        >
+          This is title of this component : {{ title }} {{ myNum }} {{ myObj }}
+          {{ myArr }}
+        </p>
+
+        <p
+          [innerHTML]="'This is title of this component : PB [] : ' + title"
+          [ngClass]="{
+            title1: myNum % 2 == 0,
+            title2: myNum % 2 != 0
+          }"
+        ></p>
+      </div>
+
+      <div class="col-md-6 m-4">
+        <h3>HTML to Controller</h3>
+
+        <p>Event Binding ()</p>
+
+        <input type="number" class="form-control col-md-6" #myNumInput />
+
+        <button class="btn btn-success mt-3" (click)="updateMyNum()">
+          Click to Update Title
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <h1>NG IF demo</h1>
+
+      <div class="box1" *ngIf="toggleDiv; else showdiv2">
+        Hi, I am Div 1, Currently u r seeing me !!
+      </div>
+
+      <ng-template #showdiv2>
+        <!-- Template Reference -->
+        <div class="box1">Hi, I am Div 2, Currently u r seeing me !!</div>
+      </ng-template>
+    </div>
+
+    <div
+      *ngFor="
+        let i of myArr;
+        index as ind;
+        first as isFirstItem;
+        last as isLastItem;
+        odd as isOddIndexItem;
+        even as isEvenItem
+      "
+    >
+      <p [id]="ind">{{ i }}</p>
+    </div>
+
+    <div class="card" style="width: 18rem">
+      <img
+        class="card-img-top"
+        src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17ee3cbb608%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17ee3cbb608%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1937484741211%22%20y%3D%2296.24000034332275%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+    <div>
+      <button class="btn btn-success" (click)="updateProductsWithStorage()">
+        Update with Storage
+      </button>
     </div>
   </div>
-</div>
 
-<div>
-  <button class="btn btn-success" (click)="updateProductsWithStorage()">
-    Update with Storage
-  </button>
+  <div class="col-md-6">
+    <router-outlet> </router-outlet>
+  </div>
 </div>

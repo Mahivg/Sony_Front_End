@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { interval, observable, Observable, Subscription } from 'rxjs';
 import { Product } from '../models/Product';
 import { StorageService } from '../services/storage.service';
 
@@ -8,9 +9,11 @@ import { StorageService } from '../services/storage.service';
   templateUrl: './first-detail.component.html',
   styleUrls: ['./first-detail.component.css']
 })
-export class FirstDetailComponent implements OnInit {
+export class FirstDetailComponent implements OnInit, OnDestroy {
 
-  product: Product
+  product: Product;
+
+  subscription1: Subscription;
 
   constructor(private route: ActivatedRoute, private storageService: StorageService) { }
 
@@ -28,7 +31,34 @@ export class FirstDetailComponent implements OnInit {
       // whenever route params getting changed
     });
 
+    const observer = new Observable(observable => {
+      observable.next("some data");
+    });
+
+     observer.subscribe(data => {
+      console.log(data);
+    });
+
+    this.subscription1 = interval(1000).subscribe(data => {
+      console.log(data);
+    });
+    // this.myInterval(1000).subscribe(data => {
+    //   console.log(data);
+    // });
 //
+  }
+
+  myInterval(mill: number) {
+    let i = -1;
+    return new Observable(observable => {
+        setTimeout(()=> {
+            observable.next(++i);
+        }, mill);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription1.unsubscribe();
   }
 
 }
