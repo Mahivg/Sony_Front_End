@@ -1,28 +1,69 @@
 <div class="w-100">
   <h1 class="text-center">Login</h1>
-  <div class="d-flex align-items-center justify-content-center">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="" class="control-label"> User Name </label>
-        <input type="text" id="txtUserName" class="form-control" #txtUserName />
-      </div>
+  <form #loginTDF="ngForm" (ngSubmit)="login()">
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="" class="control-label"> User Name </label>
+          <input
+            type="email"
+            id="txtUserName"
+            name="userName"
+            class="form-control"
+            #txtUserName
+            ngModel
+            required
+            email
+          />
+          <div *ngIf="loginTDF.submitted && loginTDF.controls.userName.errors">
+            <p
+              class="text-danger"
+              *ngIf="loginTDF.controls.userName.errors.required"
+            >
+              User name is Required..!!!
+            </p>
+            <p
+              class="text-danger"
+              *ngIf="loginTDF.controls.userName.errors.email"
+            >
+              Enter valid Email!!!
+            </p>
+          </div>
+        </div>
 
-      <div class="form-group mt-2">
-        <label for="" class="control-label"> Password </label>
-        <input
-          type="password"
-          id="txtPassword"
-          class="form-control"
-          #txtPassword
-        />
-      </div>
-      <div class="form-group mt-2">
-        <button type="button" class="btn btn-primary" (click)="login()">
-          LOGIN
-        </button>
+        <div class="form-group mt-2">
+          <label for="" class="control-label"> Password </label>
+          <input
+            type="password"
+            id="txtPassword"
+            name="password"
+            class="form-control"
+            #txtPassword
+            ngModel
+            required
+            minlength="6"
+          />
+          <div *ngIf="loginTDF.submitted && loginTDF.controls.password.errors">
+            <p
+              class="text-danger"
+              *ngIf="loginTDF.controls.password.errors.required"
+            >
+              Password is Required..!!!
+            </p>
+            <p
+              class="text-danger"
+              *ngIf="loginTDF.controls.password.errors.minlength"
+            >
+              Password length should be greater than or equal to 6..!!!
+            </p>
+          </div>
+        </div>
+        <div class="form-group mt-2">
+          <button class="btn btn-primary">LOGIN</button>
+        </div>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 
 <div>

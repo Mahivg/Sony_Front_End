@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StorageService } from '../services/storage.service';
 
@@ -9,11 +10,14 @@ import { StorageService } from '../services/storage.service';
 })
 export class LoginComponent implements OnInit {
 
-  @ViewChild('txtUserName')
-  inputUserName: ElementRef;
+  // @ViewChild('txtUserName')
+  // inputUserName: ElementRef;
 
-  @ViewChild('txtPassword')
-  inputUserPass: ElementRef;
+  // @ViewChild('txtPassword')
+  // inputUserPass: ElementRef;
+
+  @ViewChild('loginTDF')
+  myTDLoginForm: NgForm;
 
   firstComponentPath: string = 'first';
 
@@ -27,12 +31,19 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const username = this.inputUserName.nativeElement.value;
-    const password = this.inputUserPass.nativeElement.value;
-    const isLogin = this.storageService.validateUser(username, password);
+    // const username = this.inputUserName.nativeElement.value;
+    // const password = this.inputUserPass.nativeElement.value;
+
+    console.log(this.myTDLoginForm);
+    if(this.myTDLoginForm.invalid) {
+      return;
+    }
+
+    console.log(this.myTDLoginForm.value);
+    const userCreds = this.myTDLoginForm.value;
+
+    const isLogin = this.storageService.validateUser(userCreds.userName, userCreds.password);
     this.storageService.setUserLoggedInStatus(isLogin);
-
-
     console.log("LoginComponent --> login() --> Emits : " + isLogin);
     this.storageService.authStateChanged.next(isLogin);
 
@@ -46,6 +57,7 @@ export class LoginComponent implements OnInit {
         asdas: 3232
       }});
     }
+
   }
 
 }

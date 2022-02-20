@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { interval, observable, Observable, Subscription } from 'rxjs';
 import { Product } from '../models/Product';
 import { StorageService } from '../services/storage.service';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'my-first-detail',
@@ -30,17 +31,18 @@ export class FirstDetailComponent implements OnInit, OnDestroy {
       this.product = this.storageService.getProductById(prodId);
       // whenever route params getting changed
     });
+    const data = [1,2,3,4,5,6,7,8,9,10];
 
-    const observer = new Observable(observable => {
-      observable.next("some data");
+    const observer = new Observable<number[]>(observable => {
+      observable.next(data);
     });
 
-     observer.subscribe(data => {
+    observer.subscribe(data => {
       console.log(data);
     });
 
     this.subscription1 = interval(1000).subscribe(data => {
-      console.log(data);
+      // console.log(data);
     });
     // this.myInterval(1000).subscribe(data => {
     //   console.log(data);
