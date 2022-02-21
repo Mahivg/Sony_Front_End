@@ -1767,6 +1767,9 @@ Ways to bring stylings to HTML
 			
 				-> at a time both, Data Synced with HTML and Contoller
 				
+				-> [(ngModel)]="variable"
+				
+				
 	
 	Directives
 	
@@ -2316,6 +2319,10 @@ Ways to bring stylings to HTML
 					//this will be called
 				});
 				
+				this.service.authStateChanged$.subscribe(data => {});
+				this.service.authStateChanged$.subscribe(data => {}, err => { });
+				this.service.authStateChanged$.subscribe(data => {}, err => { }, () => {});
+				
 			FormsModule, 
 			
 			HttpModule
@@ -2445,7 +2452,7 @@ Ways to bring stylings to HTML
 			
 				inputs should be registred to form, mention name attribture 
 				
-				<input type="text" id="txtName" name="userName" #txtUserName ngModel />
+				<input type="text" id="txtName" name="userName" #txtUserName="ngModel" ngModel />
 				
 			4.  Handle the submit
 				
@@ -2481,17 +2488,54 @@ Ways to bring stylings to HTML
 				
 				loginForm.submitted
 				
+				
+			{			
+				Password: "test"
+				cPassword: "teste",
+				dob: "2022-02-11",
+				email: "test",
+				userName: "Magesh",
+				address: {
+					line1: '',
+					line2: ''
+				}
+			}
 			
-		
-		
+			form
 			
+				input
+				
+				inputs
+				
+				div [ngModelGroup]="address"
+				
+					input name="line1"
+					
+					input name="line2"
 			
 			
 			
 			ReactiveForm
 			
 				Form will be created in Controller then binded to HTML
+				
+				1. Import ReactiveFormsModule
+				
+				2. wrap into form tag, get form instance #loginForm="ngForm"
+				
+				3. Create Form
+				
+						this.myForm = new FormGroup({
+							userName: new FormControl(),
+							password: new FormControl()
+						})
+				4. bind it to HTML
+				
+					<form [formGroup]="myForm" (ngSubmit)="">
 						
+						<input type="text" id="txtName" formControlName="userName" #txtUserName="ngModel" ngModel />
+						
+												
 						
 						
 				

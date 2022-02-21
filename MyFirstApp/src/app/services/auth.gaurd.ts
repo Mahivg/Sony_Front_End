@@ -13,7 +13,8 @@ export class AuthGaurd implements CanActivate, CanActivateChild {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     console.log('AuthGaurd: --> : CanActivate : ' +  this.storageService.getUserLoggedInStatus());
 
-    return this.storageService.getUserLoggedInStatus();
+    // return this.storageService.getUserLoggedInStatus();
+    return true;
   }
 
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {

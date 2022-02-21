@@ -10,22 +10,19 @@
             id="txtUserName"
             name="userName"
             class="form-control"
-            #txtUserName
+            #txtUserName="ngModel"
             ngModel
             required
             email
           />
-          <div *ngIf="loginTDF.submitted && loginTDF.controls.userName.errors">
+          <div *ngIf="loginTDF.submitted && txtUserName.errors">
             <p
               class="text-danger"
-              *ngIf="loginTDF.controls.userName.errors.required"
+              *ngIf="txtUserName.errors.required && txtUserName.touched"
             >
               User name is Required..!!!
             </p>
-            <p
-              class="text-danger"
-              *ngIf="loginTDF.controls.userName.errors.email"
-            >
+            <p class="text-danger" *ngIf="txtUserName.errors.email">
               Enter valid Email!!!
             </p>
           </div>
@@ -38,28 +35,22 @@
             id="txtPassword"
             name="password"
             class="form-control"
-            #txtPassword
+            #txtPassword="ngModel"
             ngModel
             required
             minlength="6"
           />
-          <div *ngIf="loginTDF.submitted && loginTDF.controls.password.errors">
-            <p
-              class="text-danger"
-              *ngIf="loginTDF.controls.password.errors.required"
-            >
+          <div *ngIf="loginTDF.submitted && txtPassword.errors">
+            <p class="text-danger" *ngIf="txtPassword.errors.required">
               Password is Required..!!!
             </p>
-            <p
-              class="text-danger"
-              *ngIf="loginTDF.controls.password.errors.minlength"
-            >
+            <p class="text-danger" *ngIf="txtPassword.errors.minlength">
               Password length should be greater than or equal to 6..!!!
             </p>
           </div>
         </div>
         <div class="form-group mt-2">
-          <button class="btn btn-primary">LOGIN</button>
+          <button type="submit" class="btn btn-primary">LOGIN</button>
         </div>
       </div>
     </div>

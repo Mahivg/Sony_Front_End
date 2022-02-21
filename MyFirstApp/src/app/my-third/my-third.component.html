@@ -1,1 +1,191 @@
-<p>my-third works!</p>
+<div class="col-md-7 ms-4">
+  <h3>Add User</h3>
+
+  <!-- <h6> Using TD </h6>
+  <form #userTdForm="ngForm" (ngSubmit)="addUser()">
+    <div class="form-group">
+      <label for="txtName"> Name : </label>
+      <input
+        type="text"
+        class="form-control"
+        name="userName"
+        ngModel
+        #userName="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="txtName"> DOB : </label>
+      <input
+        type="date"
+        class="form-control"
+        name="dob"
+        ngModel
+        #dob="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="txtName"> Email : </label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        ngModel
+        #emailId="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="txtName"> Password : </label>
+      <input
+        type="text"
+        class="form-control"
+        name="password"
+        ngModel
+        #password="ngModel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="txtName"> Confirm Password : </label>
+      <input
+        type="text"
+        class="form-control"
+        name="cPassword"
+        ngModel
+        #cPassword="ngModel"
+      />
+    </div>
+    <div [ngModelGroup]="'address'">
+      <h3>Address</h3>
+      <div class="form-group">
+        <label for="txtName"> Line 1 : </label>
+        <input type="text" class="form-control" name="line1" ngModel />
+      </div>
+      <div class="form-group">
+        <label for="txtName"> Line 2 : </label>
+        <input type="text" class="form-control" name="line2" ngModel />
+      </div>
+    </div>
+    <div class="form-group mt-3">
+      <button type="submit" class="btn btn-success">Sign Up</button>
+      <button type="button" class="btn btn-danger ms-3" (click)="resetValue()">
+        Reset
+      </button>
+      <button
+        type="button"
+        class="btn btn-warning ms-3"
+        (click)="setPatchValue()"
+      >
+        Patch
+      </button>
+    </div>
+  </form> -->
+
+  <h6>Using Reactive</h6>
+
+  <form #userF="ngForm" [formGroup]="userFormGroup" (ngSubmit)="addUser()">
+    <div class="form-group">
+      <label for="txtName"> Name : </label>
+      <input
+        type="text"
+        class="form-control"
+        name="userName"
+        formControlName="userName"
+      />
+      <div *ngIf="userF.submitted && userFormGroup.get('userName').errors">
+        <p
+          class="text-danger"
+          *ngIf="userFormGroup.get('userName').errors.required"
+        >
+          User Name is Required..!!!
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="txtName"> DOB : </label>
+      <input
+        type="date"
+        class="form-control"
+        name="dob"
+        formControlName="dob"
+      />
+    </div>
+    <div class="form-group">
+      <label for="txtName"> Email : </label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        [(ngModel)]="myEmail"
+        formControlName="email"
+      />
+      <div *ngIf="userF.submitted && userFormGroup.get('email').errors">
+        <p class="text-danger" *ngIf="userFormGroup.get('email').errors.email">
+          Enter valid email..!!!
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="txtName"> Password : </label>
+      <input
+        type="text"
+        class="form-control"
+        name="password"
+        formControlName="password"
+      />
+    </div>
+    <div class="form-group">
+      <label for="txtName"> Confirm Password : </label>
+      <input
+        type="text"
+        class="form-control"
+        name="cPassword"
+        formControlName="cPassword"
+      />
+      <div *ngIf="userF.submitted && userFormGroup.get('cPassword').errors">
+        <p
+          class="text-danger"
+          *ngIf="userFormGroup.get('cPassword').errors.passwordMismatch"
+        >
+          Password mismatch
+        </p>
+      </div>
+    </div>
+    <div [formGroupName]="'address'">
+      <h3>Address</h3>
+      <div class="form-group">
+        <label for="txtName"> Line 1 : </label>
+        <input
+          type="text"
+          class="form-control"
+          name="line1"
+          formControlName="line1"
+        />
+      </div>
+      <div class="form-group">
+        <label for="txtName"> Line 2 : </label>
+        <input
+          type="text"
+          class="form-control"
+          name="line2"
+          formControlName="line2"
+        />
+      </div>
+    </div>
+    <div class="form-group mt-3">
+      <button type="submit" class="btn btn-success">Sign Up</button>
+      <button type="button" class="btn btn-danger ms-3" (click)="resetValue()">
+        Reset
+      </button>
+      <button
+        type="button"
+        class="btn btn-warning ms-3"
+        (click)="setPatchValue()"
+      >
+        Patch
+      </button>
+    </div>
+  </form>
+
+  <div class="mt-4">
+    <button class="btn btn-primary" (click)="setValue()">Set User value</button>
+  </div>
+</div>

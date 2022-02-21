@@ -4,6 +4,7 @@ import { FirstDetailComponent } from "./first-detail/first-detail.component";
 import { LoginComponent } from "./login/login.component";
 import { MyFirstComponent } from "./my-first/my-first.component";
 import { MySecondComponent } from "./my-second/my-second.component";
+import { MyThirdComponent } from "./my-third/my-third.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { AuthGaurd } from "./services/auth.gaurd";
 
@@ -21,8 +22,8 @@ const appRoutes: Routes = [
         component: FirstDetailComponent
       }
     ],
-    canActivate: [ AuthGaurd ],
-    canActivateChild: [AuthGaurd]
+    // canActivate: [ AuthGaurd ],
+    // canActivateChild: [AuthGaurd]
   },
   // {
   //   path: 'first/:id',
@@ -31,6 +32,10 @@ const appRoutes: Routes = [
   {
     path: 'second',
     component: MySecondComponent
+  },
+  {
+    path: 'third',
+    component: MyThirdComponent
   },
   {
     path: '',

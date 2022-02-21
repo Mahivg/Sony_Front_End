@@ -33,20 +33,18 @@ export class FirstDetailComponent implements OnInit, OnDestroy {
     });
     const data = [1,2,3,4,5,6,7,8,9,10];
 
-    const observer = new Observable<number[]>(observable => {
+    const observer = new Observable(observable => {
       observable.next(data);
     });
 
-    observer.subscribe(data => {
+    observer.pipe(map((a: any) => a * 2), filter((a: any) => a % 2 == 0)).subscribe(data => {
       console.log(data);
     });
 
-    this.subscription1 = interval(1000).subscribe(data => {
-      // console.log(data);
+    this.subscription1 = interval(1000).pipe(map( da => da * 2 ), filter(da => da % 2 == 0)).subscribe(data => {
+      console.log(data);
     });
-    // this.myInterval(1000).subscribe(data => {
-    //   console.log(data);
-    // });
+
 //
   }
 

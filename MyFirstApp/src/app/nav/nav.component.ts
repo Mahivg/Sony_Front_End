@@ -23,8 +23,8 @@ export class NavComponent implements OnInit, OnDestroy {
    this.sub =  this.storageService.authStateChanged$.subscribe(status => {
       console.log("NavComponent --> ngOnInit() --> Received : " + status);
       this.isUserLoggedIn = status;
-      if(!this.isUserLoggedIn)
-        this.router.navigate(['/login']);
+      // if(!this.isUserLoggedIn)
+        // this.router.navigate(['/login']);
     });
   }
 
