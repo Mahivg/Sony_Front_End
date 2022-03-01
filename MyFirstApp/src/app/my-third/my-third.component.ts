@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Post } from '../models/Post';
+import { DbService } from '../services/db.service';
 import { StorageService } from '../services/storage.service';
 
 @Component({
@@ -21,7 +24,7 @@ export class MyThirdComponent implements OnInit {
 
   myEmail: string = "m@gmail.com";
 
-  constructor(private storageService: StorageService) { }
+  constructor(private storageService: StorageService, private httpClient: HttpClient, private dbService: DbService) { }
 
   ngOnInit(): void {
     this.userFormGroup = new FormGroup({
@@ -46,7 +49,10 @@ export class MyThirdComponent implements OnInit {
   checkPassWord(control: AbstractControl): {[key: string]: any} | null  {
     if(this.userFormGroup) {
       const passwordValue = this.userFormGroup.get('password').value;
-      const cPasswordValue = this.userFormGroup.get('cPassword').value;
+      const cPasswordValue = control.value;
+
+      const numRegex = '^[0-9]*$';
+      numRegex.match(cPasswordValue);
 
       if(passwordValue && cPasswordValue) {
         if(passwordValue == cPasswordValue) {
@@ -55,6 +61,39 @@ export class MyThirdComponent implements OnInit {
       }
       return { passwordMismatch : true };
     }
+  }
+
+
+  callFakeAPIGEt() {
+    console.log('Before api get call');
+    this.dbService.getPosts().subscribe(data => {
+      console.log(data);
+      console.log(data[0]);
+      // this.callPostById(10);
+    }, err => {}, () => {});
+    console.log('After api get call');
+
+
+  }
+
+  callPostById(postId: number) {
+
+   this.dbService.getPostById(1).subscribe(data => {
+        console.log(data);
+      }, err => {}, () => {});
+  }
+
+  callFakeAPIPost() {
+
+    const post = {
+      body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+      id: 1,
+      title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+      userId: 1
+    }
+    this.dbService.AddPost(post).subscribe(data => {
+      console.log(data);
+    }, err => {}, () => {});
   }
 
 

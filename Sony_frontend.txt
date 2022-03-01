@@ -2534,6 +2534,133 @@ Ways to bring stylings to HTML
 					<form [formGroup]="myForm" (ngSubmit)="">
 						
 						<input type="text" id="txtName" formControlName="userName" #txtUserName="ngModel" ngModel />
+			
+			
+			
+			Http Module
+			
+				API Response;
+				
+					json : [], {}
+					
+					text: ''
+					
+					file
+					
+			API Methods
+			
+				GET, POST, PUT, DELETE, PATCH, OPTIONS
+				
+				Idempotent
+				
+					GET, PUT
+					
+					calling an url multiple times gives same response
+					
+					/users/1 -> GET
+					
+					/users/1 -> PUT -> { name: 'changeName'} ->
+					
+				Getting values in url
+				
+					GET -> Path parameter and query parameter  -> will not have body
+					
+					POST, PUT, PATCH -> path, query with Request Body
+
+					
+					Response type
+					
+						server : 
+						Produces : 'application/json', 'application/txt'
+						
+					RequestType
+						media type : 'application/json', 'application/txt'
+						
+				
+				
+					/232/232
+					
+					/33232/32323
+					
+					
+						{
+							'askbas',
+							sakjnsa;,
+							
+						}
+					
+					
+						
+		
+			steps:
+			
+				1. include HTTP module (HttpClientModule) in our app 
+				
+				2. Importing in AppModule
+				
+				3. Request angular for HttpClient Service
+		
+						
+				
+			Intercepting our HTTP calls
+			
+			
+				all calls will be interpreted
+				
+				
+				Steps:
+				
+					1. create a class and make it as service
+					2. implement HttpInteceptor Interface
+					3. override intercept method
+					4. clone the request received and do the modification needed
+					5. return next.handle(withnewReq);
+					
+					
+				6. configure
+				
+					module
+						 providers: [
+							{
+							  provide: HTTP_INTERCEPTORS,
+							  useClass: AuthInterceptor,
+							  multi: true
+							}
+						  ],
+						  
+						  
+		
+		Pipes
+		
+			data = "Askankjansj"
+		
+			{{ data }}
+				
+			
+			Predefined pipes
+			
+				uppercase
+				
+				lowercase
+				
+				titlecase
+				
+				date
+				
+				json
+				
+				currency
+				
+				orderby
+				
+			
+			{{ data | lowercase }}
+				
+						
+					
+					
+			
+		
 						
 												
 						

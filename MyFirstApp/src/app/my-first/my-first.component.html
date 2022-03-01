@@ -1,6 +1,8 @@
 <h1>This is My First created component</h1>
 <p>Created manually by creating files</p>
 
+<p>{{ myObj | json }}</p>
+
 <div class="row">
   <div class="col-md-6">
     <div>
@@ -15,9 +17,10 @@
 
     <div id="product-list" class="row">
       <div *ngFor="let prod of products" class="col-md-3 m-3">
-        <p>{{ prod.name }} _ {{ prod.id }}</p>
-        <p>{{ prod.description }}</p>
-        <p>{{ prod.price }}</p>
+        <p>{{ prod.name | uppercase | lowercase }} _ {{ prod.id }}</p>
+        <p>{{ prod.description | titlecase }}</p>
+        <p>{{ prod.price | currency: "INR" }}</p>
+        <p>{{ prod.mDate | date: "fullDate" }}</p>
         <div>
           <!-- <a routerLink="{{ '/first/' + prod.id }}"> Go to detail</a> -->
           <a [routerLink]="['/first', prod.id]"> Go to detail</a>
@@ -30,7 +33,6 @@
 
       <div>
         <h3>Controller to HTML</h3>
-
         <p
           [ngStyle]="{
             'background-color':

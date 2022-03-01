@@ -15,7 +15,7 @@ export class MySecondComponent implements OnChanges, OnInit, DoCheck, AfterConte
   // @Output()
   // onProductUpdated = new EventEmitter<Product>();
 
-  newProduct: Product = new Product('7', 'Product 7', 'Product 7 Description', 2000);
+  newProduct: Product = new Product('7', 'Product 7', 'Product 7 Description', 2000,'23/02/1011');
 
   constructor(private storageService: StorageService) {
     // Dependency Injection

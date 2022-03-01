@@ -16,12 +16,12 @@ export class StorageService {
   constructor(){}
 
   private products: Product[] = [
-    new Product('1', 'Product 1', "Product 1 description", 1000),
-    new Product('2', 'Product 2', "Product 2 description", 1000),
-    new Product('3', 'Product 3', "Product 3 description", 1000),
-    new Product('4', 'Product 4', "Product 4 description", 1000),
-    new Product('5', 'Product 5', "Product 5 description", 1000),
-    new Product('6', 'Product 6', "Product 6 description", 1000),
+    new Product('1', 'Product 1', "Product 1 description", 1000, '2/13/1990'),
+    new Product('2', 'Product 2', "Product 2 description", 2000, '2/14/1990'),
+    new Product('3', 'Product 3', "Product 3 description", 7000, '2/2/1990'),
+    new Product('4', 'Product 4', "Product 4 description", 4000, '2/11/1990'),
+    new Product('5', 'Product 5', "Product 5 description", 2500, '2/11/1990'),
+    new Product('6', 'Product 6', "Product 6 description", 1500, '2/1/1990'),
   ];
 
   private users: User[] = [
