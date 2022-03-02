@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, EventEmitter, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, EventEmitter, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChildren, ViewEncapsulation } from '@angular/core';
 import { Product } from '../models/Product';
 import { StorageService } from '../services/storage.service';
 
@@ -11,6 +11,8 @@ import { StorageService } from '../services/storage.service';
 export class MySecondComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
 
   myStr: string = '';
+
+  // @ViewChildren('sony-my-third') thirdInstance: any;
 
   // @Output()
   // onProductUpdated = new EventEmitter<Product>();

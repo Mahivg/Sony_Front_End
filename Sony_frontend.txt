@@ -2649,13 +2649,58 @@ Ways to bring stylings to HTML
 				
 				json
 				
-				currency
+				currency: 'INR"
 				
 				orderby
 				
 			
 			{{ data | lowercase }}
+			
+			
+		
+			
+			
+			
+		
+		Custom Pipes
+
+			reverseString
+			
+			
+			Steps:
+			
+				1. created a class ReverseStringPipe
 				
+				2. Annotated with @Pipe and metadata { name: 'pipename' }
+				
+				3. implemented PipeTransform interface and implemeted transform method
+				
+				4. based on the code operation, we have return a value.
+				
+				
+			Custom Directives
+			
+				Attribute Directive
+				
+					
+				
+					
+				
+				Structure Directive
+				
+					<ng-template #templaRef>
+					`<p myCustDir> </p>
+					
+					</ng-template>
+			
+			
+			
+			
+			
+			
+			
+			
+			
 						
 					
 					

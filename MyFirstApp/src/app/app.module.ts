@@ -13,6 +13,9 @@ import { FirstDetailComponent } from './first-detail/first-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { ReverseStringPipe } from './shared/reverse-string.pipe';
+import { MyAttributeDirective } from './shared/my-att-directive';
+import { MyCustDirective } from './shared/my-cust.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,10 @@ import { AuthInterceptor } from './services/auth.interceptor';
     NavComponent,
     LoginComponent,
     PageNotFoundComponent,
-    FirstDetailComponent
+    FirstDetailComponent,
+    ReverseStringPipe,
+    MyAttributeDirective,
+    MyCustDirective
   ],
   imports: [
     BrowserModule,

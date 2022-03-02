@@ -1,7 +1,12 @@
 <h1>This is My First created component</h1>
 <p>Created manually by creating files</p>
 
-<p>{{ myObj | json }}</p>
+<p [company]="'NS'" *myCustDir>NextSphere TEch</p>
+<p [company]="'FMR'" *myCustDir>Fidelity</p>
+
+<p myAttrDir [name]="'Mounika'">{{ myObj | json }}</p>
+
+<p>{{ "myString" | reversestring: "param1":"param2" }}</p>
 
 <div class="row">
   <div class="col-md-6">
